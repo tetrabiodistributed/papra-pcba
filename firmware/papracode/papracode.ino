@@ -5,8 +5,8 @@
   to do
     - look at averaging battery voltage
     - set a MIN PWM value for fan output, vary with battery level
-  current code flash: 2054/4096 bytes (50%) RAM: 22/256 (8%) bytes without debug enabled
-               flash: 3750/4096 bytes (91%) RAM: 83/256 (32%) with debug enabled  
+  current code flash: 2072/4096 bytes (50%) RAM: 30/256 (11%) bytes without debug enabled
+               flash: 3757/4096 bytes (91%) RAM: 93/256 (36%) with debug enabled  
  */
 
 //be sure to go to Arduino >> tools >> Support SerialEvent "No(saves space)" or "yes"
@@ -36,11 +36,11 @@
 // > 2.80V/Cell =  0%        Battery  = Shut Down
 
 //Limits the min pot value     Voltage   Min PWM Percentage
-const int minPotfull = 276;  //11.85V      69     >77%
-const int minPot75p  = 288;  //11.10V      72     >54%
-const int minPot50p  = 308;  //10.62V      77     >33%
-const int minPot25p  = 352;  //9.75V       88     >10%
-const int minPot10p  = 440;  //8.40V      110     >0%
+const int minPWMfull =  69;  //11.85V      69     >77%
+const int minPWM75p  =  72;  //11.10V      72     >54%
+const int minPWM50p  =  77;  //10.62V      77     >33%
+const int minPWM25p  =  88;  //9.75V       88     >10%
+const int minPWM10p  = 120;  //8.40V      110     >0%
 //These values were determined emperically by adjusting the input voltage and dialing the PWM down until motor stall
 
 //State Machine states
@@ -61,15 +61,17 @@ int led4 = PIN_PB0;
 int analogBatt = PIN_A1; //10 bit resolution on ADC 
 int analogPot = PIN_A2; 
 int PWMPin = PIN_PA3;    //8 bit resolution with Arduino AnalogWrite
-int offTime = 95; //ms
-int onTime = 5;   //ms
+int offTime = 5; //ms
+int onTime = 95;   //ms
 int loopDelay = 25; //ms
-long speedPot = 0;
-int battery = 0;
 int blinkCounter = 0;
-int minPot = minPot10p;
-const int maxPot = 1023;
-int maxPWM = 255;
+const uint32_t numBatterySamples = 10;
+uint32_t battery = 1023;
+const uint32_t maxPot = 1023;
+uint32_t speedPot = 0;
+uint32_t minPWM = minPWM10p;
+uint32_t maxPWM = 255;
+uint32_t rawADC = 0;
 
 const int LEDFlashLoop  = 25; //decrease for 10% battery LED to blink faster
 
@@ -91,19 +93,20 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Starting up");
 #endif
-  for (int i = 0; i <= 6; i++) { //startup knightrider 
+  
+  for (int i = 0; i <= 4; i++) { //startup knightrider 
     digitalWrite(led1, LOW);  delay(onTime);
-    digitalWrite(led1, HIGH); delay(offTime);
+    digitalWrite(led1, HIGH); 
     digitalWrite(led2, LOW);  delay(onTime);
-    digitalWrite(led2, HIGH); delay(offTime);
+    digitalWrite(led2, HIGH); 
     digitalWrite(led3, LOW);  delay(onTime);
-    digitalWrite(led3, HIGH); delay(offTime);
-    digitalWrite(led4, LOW);  delay(onTime);
-    digitalWrite(led4, HIGH); delay(offTime);
+    digitalWrite(led3, HIGH); 
+    digitalWrite(led4, LOW);  delay(onTime); delay(onTime);
+    digitalWrite(led4, HIGH); 
     digitalWrite(led3, LOW);  delay(onTime);
-    digitalWrite(led3, HIGH); delay(offTime);
+    digitalWrite(led3, HIGH); 
     digitalWrite(led2, LOW);  delay(onTime);
-    digitalWrite(led2, HIGH); delay(offTime);
+    digitalWrite(led2, HIGH); 
     digitalWrite(led1, LOW);  delay(onTime);
     digitalWrite(led1, HIGH); delay(offTime);
   }
@@ -114,13 +117,13 @@ void loop() {
   delay(25);
   //Clamp and rescale potentiometer input from a 10bit value to 8 bit
   if (maxPWM > 0) {
-    speedPot = ( maxPWM * (analogRead(analogPot) - minPot) ) / (maxPot - minPot);
+    rawADC = analogRead(analogPot);
+    speedPot = ( ( ( maxPWM - minPWM ) * rawADC ) / maxPot ) + minPWM;
   } else {
     speedPot = maxPWM;
   }  
   analogWrite(PWMPin, speedPot);
-
-  battery = analogRead(analogBatt);
+  battery = battery = ( ( battery * ( numBatterySamples - 1 ) ) + analogRead(analogBatt) ) / numBatterySamples;
   switch (battery) {
     case 925 ... 1023: // Full = 78% - 100%
       if (batteryState > batteryFull) {
@@ -129,7 +132,7 @@ void loop() {
         digitalWrite(led2, LOW);
         digitalWrite(led3, LOW);
         digitalWrite(led4, LOW);
-        minPot = minPotfull;
+        minPWM = minPWMfull;
       }
       break;
     case 867 ... 924: // 75% = 55% - 77%
@@ -139,7 +142,7 @@ void loop() {
         digitalWrite(led2, LOW);
         digitalWrite(led3, LOW);
         digitalWrite(led4, HIGH);
-        minPot = minPot75p;
+        minPWM = minPWM75p;
       }
       break;
     case 830 ... 866: // 50% = 33% - 54%
@@ -149,7 +152,7 @@ void loop() {
         digitalWrite(led2, LOW);
         digitalWrite(led3, HIGH);
         digitalWrite(led4, HIGH);
-        minPot = minPot50p;
+        minPWM = minPWM50p;
       }
       break;
     case 762 ... 829: // 25% = 10% - 32%
@@ -159,7 +162,7 @@ void loop() {
         digitalWrite(led2, HIGH);
         digitalWrite(led3, HIGH);
         digitalWrite(led4, HIGH);
-        minPot = minPot25p;
+        minPWM = minPWM25p;
       }
       break;
     case 657 ... 761: // 10% - Need to blink LED
@@ -169,7 +172,7 @@ void loop() {
         digitalWrite(led3, HIGH);
         digitalWrite(led4, HIGH);
         digitalWrite(led1, LOW);
-        minPot = minPot10p;
+        minPWM = minPWM10p;
       }
       break;
     case 0 ... 652: // Shutdown
@@ -191,12 +194,10 @@ void loop() {
     }
   }  
 #ifdef DEBUG_SERIAL
-  Serial.print("Battery = ");
-  Serial.print(battery);
-  Serial.print(" pot =");
-  Serial.print(speedPot);
-  Serial.print(" Battery State =");
-  Serial.println(batteryState);
+  Serial.print(" Battery = ");      Serial.print(battery);
+  Serial.print(" rawADC =");        Serial.print(rawADC);
+  Serial.print(" pot =");           Serial.print(speedPot);
+  Serial.print(" Battery State ="); Serial.println(batteryState);
   digitalWrite(PIN_PB1,!digitalRead(PIN_PB1)); //Toggle unused pin for debugging with scope 
 #endif
 }
