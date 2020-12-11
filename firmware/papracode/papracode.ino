@@ -11,7 +11,7 @@
 
 //be sure to go to Arduino >> tools >> Support SerialEvent "No(saves space)" or "yes"
 //serial debug takes up about 1300 bytes of flash, out of 4096 available, not including print statements
-//#define DEBUG_SERIAL   //uncomment line to enable serial debug
+#define DEBUG_SERIAL   //uncomment line to enable serial debug
 
 // Pin connections per PAPR V0.1 PCB
 // PA0 - UPDI/RESET
