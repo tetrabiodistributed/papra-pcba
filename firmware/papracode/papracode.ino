@@ -8,6 +8,9 @@
   AtTiny404
   current code flash: 2204/4096 bytes (53%) RAM: 30/256 (11%) bytes without debug enabled
                flash: 4021/4096 bytes (98%) RAM: 93/256 (36%) with debug enabled 
+  AtTiny1604
+  current code flash: 2452/16384 bytes (14%) RAM:  30/1024 (2%) bytes without debug enabled
+               flash: 4416/16384 bytes (26%) RAM: 189/1024 (18%) with debug enabled 
  */
 
 //be sure to go to Arduino >> tools >> Support SerialEvent "No(saves space)" or "yes"
@@ -111,7 +114,7 @@ void setup() {
   Serial.println("Starting up");
   Serial.println("PAPRA 09JAN2021");
   Serial.println("PCB v0.2");
-  Serial.println("AtTiny 404");
+  Serial.println("AtTiny 1604");
   Serial.println("(c) Tetra Bio Distributed 2021");
 #endif
   
