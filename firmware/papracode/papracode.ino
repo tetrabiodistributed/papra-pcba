@@ -1,10 +1,12 @@
-/*
+tt/*
   papracode
     - Reads battery voltage and lights up LEDs to mimic M12 battery fuel gauge
     - Reads user pot to control PWM of fan
   to do
     - look at averaging battery voltage
     - set a MIN PWM value for fan output, vary with battery level
+  PCB is compatible with the following 14SOIC ATtiny chips: 404/804/1604 and 414/814/1614 should work (needs testing)
+  Attiny204 - this could work without serial output and some code optimization
   AtTiny404
   current code flash: 2204/4096 bytes (53%) RAM: 30/256 (11%) bytes without debug enabled
                flash: 4021/4096 bytes (98%) RAM: 93/256 (36%) with debug enabled 
