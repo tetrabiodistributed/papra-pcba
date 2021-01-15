@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -155,7 +155,7 @@
 <layer number="255" name="routoute" color="7" fill="1" visible="no" active="yes"/>
 </layers>
 <board>
-<fusionsync huburn="a.YnVzaW5lc3M6Z21haWw5OTQ5MjA" projecturn="a.YnVzaW5lc3M6Z21haWw5OTQ5MjAjMjAyMDA2MjkzMTE2MTgwMjY" f3durn="urn:adsk.wipprod:dm.lineage:LAhlOhyDSPSp2ZyiyzGo9w" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="0b846a91-95e3-4ce5-a609-84c30b7ca262" lastsyncedrevisionid="0b846a91-95e3-4ce5-a609-84c30b7ca262" lastboardhashguid="591a80f1-5c6a-f252-d87d-d914ca1682ea" lastpushedtime="2020-11-03T01:03:54Z" linktopcb3d="true"/>
+<fusionsync huburn="a.YnVzaW5lc3M6Z21haWw5OTQ5MjA" projecturn="a.YnVzaW5lc3M6Z21haWw5OTQ5MjAjMjAyMDA2MjkzMTE2MTgwMjY" f3durn="urn:adsk.wipprod:dm.lineage:LAhlOhyDSPSp2ZyiyzGo9w" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="b608eb13-8918-43a7-899a-614414144d0f" lastsyncedrevisionid="b608eb13-8918-43a7-899a-614414144d0f" lastboardhashguid="bd9ae636-1969-b07a-1f27-a3de80c1d301" lastpushedtime="2020-12-21T20:23:01Z" linktopcb3d="true"/>
 <plain>
 <wire x1="-13.476" y1="-22.5" x2="13.476" y2="-22.5" width="0.001" layer="20"/>
 <wire x1="13.476" y1="-22.5" x2="15" y2="-20.976" width="0.001" layer="20" curve="90"/>
@@ -176,16 +176,31 @@
 <circle x="-6.6" y="15.42" radius="0.6985" width="0.001" layer="48"/>
 <wire x1="-6.858" y1="-2.794" x2="-6.223" y2="-2.794" width="0.1524" layer="21"/>
 <wire x1="-6.223" y1="-2.794" x2="-6.096" y2="-2.667" width="0.1524" layer="21"/>
-<text x="3.048" y="8.89" size="1.27" layer="22" font="vector" ratio="12" rot="MR270">(C) 2020 TETRA BIO DISTRIBUTED</text>
-<text x="3.556" y="-0.889" size="1.27" layer="22" font="vector" ratio="12" rot="MR90">PAPRA V0.2</text>
+<text x="-14.605" y="4.826" size="1.27" layer="22" font="vector" ratio="12" rot="MR180">(C) 2021 TETRA BIO DISTRIBUTED</text>
+<text x="13.843" y="8.382" size="1.27" layer="22" font="vector" ratio="12" rot="MR0">PAPRA V0.3</text>
 <wire x1="-3.81" y1="-20.066" x2="-3.81" y2="-21.336" width="0.254" layer="25"/>
-<text x="0.127" y="-11.049" size="1.27" layer="22" font="vector" ratio="12" rot="MR90">10DEC2020</text>
+<text x="13.843" y="6.35" size="1.27" layer="22" font="vector" ratio="12" rot="MR0">15JAN2021</text>
 <text x="-8.001" y="16.383" size="3.81" layer="25" font="vector" ratio="11">+</text>
 <text x="5.08" y="16.383" size="3.81" layer="25" font="vector" ratio="11">-</text>
 <wire x1="13.843" y1="13.462" x2="11.176" y2="13.462" width="0.254" layer="25"/>
 <wire x1="11.176" y1="13.462" x2="11.176" y2="10.795" width="0.254" layer="25"/>
 <wire x1="11.176" y1="10.795" x2="13.843" y2="10.795" width="0.254" layer="25"/>
 <wire x1="13.843" y1="10.795" x2="13.843" y2="13.462" width="0.254" layer="25"/>
+<text x="23.368" y="11.176" size="1.778" layer="25">v.2 changelog
+
+- BATTERY Tabs swapped (polarity, same position)
+- SMT Components Moved, won't affect mechanical
+- D1 package changed (was SMB, is SMA)
+
+v.3 changelog
+- Added mounting hole
+- Adjustments for JLC DRU, pad override was 40%, changed to 25%
+- Silk cleanup
+</text>
+<hole x="0" y="-11" drill="2.2"/>
+<circle x="0" y="-11" radius="2.5" width="0.1524" layer="42"/>
+<wire x1="-9.525" y1="15.24" x2="-9.525" y2="14.478" width="0.254" layer="21"/>
+<wire x1="-9.906" y1="14.859" x2="-9.144" y2="14.859" width="0.254" layer="21"/>
 </plain>
 <libraries>
 <library name="PC-LIB">
@@ -1673,47 +1688,53 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <clearance class="1" value="0.254"/>
 </class>
 </classes>
-<designrules name="JLCPCB 2 Layer">
-<description language="en"></description>
+<designrules name="jlcpcb-2layers *">
+<description language="en">&lt;b&gt;JLCPCB design rules (2 layers)&lt;/b&gt;
+&lt;ul&gt;
+&lt;li&gt;Board thickness: 1.6mm&lt;/li&gt;
+&lt;li&gt;Copper weight: 1oz (35um)&lt;/li&gt;
+&lt;li&gt;Note: annular ring aren't minimal&lt;/li&gt;
+&lt;li&gt;Mods to file by Tetra&lt;/li&gt;
+&lt;/ul&gt;</description>
 <param name="layerSetup" value="(1*16)"/>
 <param name="mtCopper" value="0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm"/>
-<param name="mtIsolate" value="0.15mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm"/>
-<param name="mdWireWire" value="6mil"/>
-<param name="mdWirePad" value="6mil"/>
-<param name="mdWireVia" value="6mil"/>
-<param name="mdPadPad" value="6mil"/>
-<param name="mdPadVia" value="6mil"/>
-<param name="mdViaVia" value="6mil"/>
-<param name="mdSmdPad" value="6mil"/>
-<param name="mdSmdVia" value="6mil"/>
-<param name="mdSmdSmd" value="6mil"/>
+<param name="mtIsolate" value="1.6mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm"/>
+<param name="mdWireWire" value="5mil"/>
+<param name="mdWirePad" value="5mil"/>
+<param name="mdWireVia" value="5mil"/>
+<param name="mdPadPad" value="5mil"/>
+<param name="mdPadVia" value="5mil"/>
+<param name="mdViaVia" value="5mil"/>
+<param name="mdSmdPad" value="5mil"/>
+<param name="mdSmdVia" value="0mil"/>
+<param name="mdSmdSmd" value="5mil"/>
 <param name="mdViaViaSameLayer" value="6mil"/>
 <param name="mnLayersViaInSmd" value="2"/>
-<param name="mdCopperDimension" value="40mil"/>
+<param name="mdCopperDimension" value="0.2mm"/>
 <param name="mdDrill" value="6mil"/>
 <param name="mdSmdStop" value="0mil"/>
-<param name="msWidth" value="6mil"/>
-<param name="msDrill" value="0.35mm"/>
-<param name="msMicroVia" value="9.99mm"/>
+<param name="msWidth" value="5mil"/>
+<param name="msDrill" value="0.3mm"/>
+<param name="msMicroVia" value="0.3mm"/>
 <param name="msBlindViaRatio" value="0.5"/>
 <param name="rvPadTop" value="0.25"/>
-<param name="rvPadInner" value="0.25"/>
+<param name="rvPadInner" value="0"/>
 <param name="rvPadBottom" value="0.25"/>
-<param name="rvViaOuter" value="0.25"/>
-<param name="rvViaInner" value="0.25"/>
-<param name="rvMicroViaOuter" value="0.25"/>
-<param name="rvMicroViaInner" value="0.25"/>
+<param name="rvViaOuter" value="0"/>
+<param name="rvViaInner" value="0"/>
+<param name="rvMicroViaOuter" value="0"/>
+<param name="rvMicroViaInner" value="0"/>
 <param name="rlMinPadTop" value="10mil"/>
-<param name="rlMaxPadTop" value="20mil"/>
+<param name="rlMaxPadTop" value="80mil"/>
 <param name="rlMinPadInner" value="10mil"/>
 <param name="rlMaxPadInner" value="20mil"/>
 <param name="rlMinPadBottom" value="10mil"/>
-<param name="rlMaxPadBottom" value="20mil"/>
-<param name="rlMinViaOuter" value="8mil"/>
+<param name="rlMaxPadBottom" value="80mil"/>
+<param name="rlMinViaOuter" value="3mil"/>
 <param name="rlMaxViaOuter" value="20mil"/>
 <param name="rlMinViaInner" value="8mil"/>
 <param name="rlMaxViaInner" value="20mil"/>
-<param name="rlMinMicroViaOuter" value="4mil"/>
+<param name="rlMinMicroViaOuter" value="3mil"/>
 <param name="rlMaxMicroViaOuter" value="20mil"/>
 <param name="rlMinMicroViaInner" value="4mil"/>
 <param name="rlMaxMicroViaInner" value="20mil"/>
@@ -1745,7 +1766,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <param name="checkWireStubs" value="1"/>
 <param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
-<param name="maxErrors" value="999999"/>
+<param name="maxErrors" value="50"/>
 </designrules>
 <autorouter>
 <pass name="Default">
@@ -2175,8 +2196,12 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="7.5" y1="-9.05" x2="10.795" y2="-5.755" width="0.8128" layer="16"/>
 <wire x1="10.795" y1="10.668" x2="9.906" y2="11.557" width="0.8128" layer="16"/>
 <wire x1="10.795" y1="-5.755" x2="10.795" y2="10.668" width="0.8128" layer="16"/>
-<wire x1="7.5" y1="-9.05" x2="4.5" y2="-12.05" width="0.8128" layer="16"/>
-<wire x1="4.5" y1="-12.05" x2="-7.5" y2="-12.05" width="0.8128" layer="16"/>
+<wire x1="7.5" y1="-9.05" x2="6.69" y2="-8.24" width="0.8128" layer="16"/>
+<wire x1="6.69" y1="-8.24" x2="5.969" y2="-7.239" width="0.8128" layer="16"/>
+<wire x1="5.969" y1="-7.239" x2="-1.905" y2="-7.239" width="0.8128" layer="16"/>
+<wire x1="-1.905" y1="-7.239" x2="-2.906" y2="-8.24" width="0.8128" layer="16"/>
+<wire x1="-2.906" y1="-8.24" x2="-3.69" y2="-8.24" width="0.8128" layer="16"/>
+<wire x1="-3.69" y1="-8.24" x2="-7.5" y2="-12.05" width="0.8128" layer="16"/>
 <wire x1="0" y1="9.3" x2="2.06" y2="7.24" width="0.8128" layer="1"/>
 <wire x1="2.06" y1="7.24" x2="2.06" y2="5.861" width="0.8128" layer="1"/>
 <wire x1="-2.409" y1="4.847" x2="-1.418" y2="4.847" width="0.508" layer="1"/>
@@ -2213,11 +2238,12 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <contactref element="H4" pad="GND"/>
 <contactref element="D1" pad="2"/>
 <contactref element="Q1" pad="3"/>
-<wire x1="9.95" y1="-12.7" x2="7.5" y2="-15.15" width="0.508" layer="1"/>
+<wire x1="9.95" y1="-10.795" x2="7.5" y2="-13.245" width="0.508" layer="1"/>
+<wire x1="7.5" y1="-13.245" x2="7.5" y2="-15.15" width="0.508" layer="1"/>
 <wire x1="11.24065" y1="-3.03748125" x2="11.24065" y2="-6.99331875" width="0.508" layer="1"/>
 <wire x1="9.95" y1="-1.1171" x2="9.95" y2="-1.74683125" width="0.508" layer="1"/>
 <wire x1="9.95" y1="-1.74683125" x2="11.24065" y2="-3.03748125" width="0.508" layer="1"/>
-<wire x1="9.95" y1="-8.28396875" x2="9.95" y2="-12.7" width="0.508" layer="1"/>
+<wire x1="9.95" y1="-8.28396875" x2="9.95" y2="-10.795" width="0.508" layer="1"/>
 <wire x1="11.24065" y1="-6.99331875" x2="9.95" y2="-8.28396875" width="0.508" layer="1"/>
 <wire x1="10.365" y1="2.817" x2="10.111" y2="2.563" width="0.508" layer="1"/>
 <wire x1="10.111" y1="2.563" x2="10.111" y2="-0.9561" width="0.508" layer="1"/>
@@ -2278,10 +2304,10 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="-0.86" y1="-20.708" x2="-0.853" y2="-20.701" width="0.254" layer="1"/>
 <wire x1="-0.853" y1="-20.701" x2="-0.127" y2="-20.701" width="0.254" layer="1"/>
 <wire x1="-0.127" y1="-20.701" x2="0.635" y2="-19.939" width="0.254" layer="1"/>
-<wire x1="0.635" y1="-19.939" x2="0.635" y2="-14.478" width="0.254" layer="1"/>
-<wire x1="0.635" y1="-14.478" x2="-0.127" y2="-13.716" width="0.254" layer="1"/>
-<wire x1="-0.127" y1="-13.716" x2="-2.159" y2="-13.716" width="0.254" layer="1"/>
-<wire x1="-2.159" y1="-13.716" x2="-2.667" y2="-14.224" width="0.254" layer="1"/>
+<wire x1="0.635" y1="-19.939" x2="0.635" y2="-14.351" width="0.254" layer="1"/>
+<wire x1="0.635" y1="-14.351" x2="0.254" y2="-13.97" width="0.254" layer="1"/>
+<wire x1="0.254" y1="-13.97" x2="-2.413" y2="-13.97" width="0.254" layer="1"/>
+<wire x1="-2.413" y1="-13.97" x2="-2.667" y2="-14.224" width="0.254" layer="1"/>
 <wire x1="-2.667" y1="-14.224" x2="-2.667" y2="-15.077" width="0.254" layer="1"/>
 <wire x1="-2.667" y1="-15.077" x2="-2.652" y2="-15.092" width="0.254" layer="1"/>
 <wire x1="-12.5" y1="-12.05" x2="-12.446" y2="-11.996" width="0.254" layer="1"/>
@@ -2295,8 +2321,8 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="-11.811" y1="10.287" x2="-11.811" y2="12.065" width="0.254" layer="1"/>
 <wire x1="-11.811" y1="12.065" x2="-11.43" y2="12.446" width="0.254" layer="1"/>
 <wire x1="-11.43" y1="12.446" x2="-7.62" y2="12.446" width="0.254" layer="1"/>
-<wire x1="-6.939" y1="11.765" x2="-6.939" y2="11.03299375" width="0.254" layer="1"/>
-<wire x1="-6.939" y1="11.03299375" x2="-5.969" y2="10.06299375" width="0.254" layer="1"/>
+<wire x1="-7.193" y1="12.019" x2="-7.193" y2="11.28699375" width="0.254" layer="1"/>
+<wire x1="-7.193" y1="11.28699375" x2="-5.969" y2="10.06299375" width="0.254" layer="1"/>
 <wire x1="-5.969" y1="10.06299375" x2="-5.969" y2="8.763" width="0.254" layer="1"/>
 <wire x1="-5.969" y1="8.763" x2="-5.08" y2="7.874" width="0.254" layer="1"/>
 <wire x1="-3.536" y1="7.874" x2="-2.409" y2="6.747" width="0.254" layer="1"/>
@@ -2305,7 +2331,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="-10.287" y1="-3.556" x2="-11.684" y2="-2.159" width="0.254" layer="1"/>
 <wire x1="-11.684" y1="5.715" x2="-10.414" y2="6.985" width="0.254" layer="1"/>
 <wire x1="-10.414" y1="6.985" x2="-10.414" y2="8.89" width="0.254" layer="1"/>
-<wire x1="-7.62" y1="12.446" x2="-6.939" y2="11.765" width="0.254" layer="1"/>
+<wire x1="-7.62" y1="12.446" x2="-7.193" y2="12.019" width="0.254" layer="1"/>
 <wire x1="-5.08" y1="7.874" x2="-3.536" y2="7.874" width="0.254" layer="1"/>
 <wire x1="-2.652" y1="-15.092" x2="-9.458" y2="-15.092" width="0.254" layer="1"/>
 <wire x1="-9.458" y1="-15.092" x2="-12.5" y2="-12.05" width="0.254" layer="1"/>
@@ -2345,12 +2371,12 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <contactref element="U2" pad="7"/>
 <contactref element="H3" pad="2"/>
 <wire x1="-0.5854" y1="-6.93" x2="-0.6404" y2="-6.985" width="0.254" layer="1"/>
-<wire x1="-0.6404" y1="-6.985" x2="-2.286" y2="-6.985" width="0.254" layer="1"/>
-<wire x1="-2.293084375" y1="-6.992084375" x2="-2.286" y2="-6.985" width="0.254" layer="1"/>
-<via x="-2.293084375" y="-6.992084375" extent="1-16" drill="0.35"/>
+<wire x1="-0.6404" y1="-6.985" x2="-3.175" y2="-6.985" width="0.254" layer="1"/>
+<wire x1="-3.182084375" y1="-6.992084375" x2="-3.175" y2="-6.985" width="0.254" layer="1"/>
+<via x="-3.182084375" y="-6.992084375" extent="1-16" drill="0.35"/>
 <wire x1="7.366" y1="-6.6598" x2="6.936284375" y2="-6.230084375" width="0.254" layer="16"/>
-<wire x1="6.936284375" y1="-6.230084375" x2="-1.531084375" y2="-6.230084375" width="0.254" layer="16"/>
-<wire x1="-2.293084375" y1="-6.992084375" x2="-1.531084375" y2="-6.230084375" width="0.254" layer="16"/>
+<wire x1="6.936284375" y1="-6.230084375" x2="-2.420084375" y2="-6.230084375" width="0.254" layer="16"/>
+<wire x1="-3.182084375" y1="-6.992084375" x2="-2.420084375" y2="-6.230084375" width="0.254" layer="16"/>
 <via x="7.366" y="-6.6598" extent="1-16" drill="0.35"/>
 <wire x1="7.366" y1="-6.6598" x2="8.255" y2="-5.7708" width="0.254" layer="1"/>
 <wire x1="8.128" y1="7.21444375" x2="9.5504" y2="8.63684375" width="0.254" layer="1"/>
@@ -2365,9 +2391,9 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <signal name="EXPANSIONRX">
 <contactref element="U2" pad="6"/>
 <contactref element="H3" pad="3"/>
-<wire x1="-2.286" y1="-5.715" x2="-2.231" y2="-5.66" width="0.254" layer="1"/>
-<wire x1="-0.5854" y1="-5.66" x2="-2.231" y2="-5.66" width="0.254" layer="1"/>
-<via x="-2.286" y="-5.715" extent="1-16" drill="0.35"/>
+<wire x1="-3.175" y1="-5.715" x2="-3.12" y2="-5.66" width="0.254" layer="1"/>
+<wire x1="-0.5854" y1="-5.66" x2="-3.12" y2="-5.66" width="0.254" layer="1"/>
+<via x="-3.175" y="-5.715" extent="1-16" drill="0.35"/>
 <via x="7.366" y="-5.588" extent="1-16" drill="0.35"/>
 <wire x1="9.0932" y1="13.8432" x2="12.47" y2="17.22" width="0.254" layer="1"/>
 <wire x1="7.366" y1="-5.588" x2="7.366" y2="-3.937" width="0.254" layer="1"/>
@@ -2377,7 +2403,7 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="7.493" y1="0.254" x2="7.493" y2="7.40114375" width="0.254" layer="1"/>
 <wire x1="7.493" y1="7.40114375" x2="9.0932" y2="8.94414375" width="0.254" layer="1"/>
 <wire x1="9.0932" y1="8.94414375" x2="9.0932" y2="13.8432" width="0.254" layer="1"/>
-<wire x1="7.239" y1="-5.715" x2="-2.286" y2="-5.715" width="0.254" layer="16"/>
+<wire x1="7.239" y1="-5.715" x2="-3.175" y2="-5.715" width="0.254" layer="16"/>
 <wire x1="7.239" y1="-5.715" x2="7.366" y2="-5.588" width="0.254" layer="16"/>
 </signal>
 <signal name="ADC-BAT">
@@ -2409,19 +2435,19 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <signal name="LED4">
 <contactref element="U2" pad="9"/>
 <contactref element="R7" pad="2"/>
-<wire x1="-4.645" y1="-6.473" x2="-3.941" y2="-6.473" width="0.254" layer="1"/>
-<wire x1="-3.941" y1="-6.473" x2="-2.667" y2="-7.747" width="0.254" layer="1"/>
-<wire x1="-2.667" y1="-7.747" x2="0.762" y2="-7.747" width="0.254" layer="1"/>
+<wire x1="-4.645" y1="-6.473" x2="-4.645" y2="-6.785" width="0.254" layer="1"/>
+<wire x1="-3.81" y1="-7.62" x2="-4.645" y2="-6.785" width="0.254" layer="1"/>
+<wire x1="-3.81" y1="-7.62" x2="0.889" y2="-7.62" width="0.254" layer="1"/>
 <wire x1="2.849" y1="-5.66" x2="4.3254" y2="-5.66" width="0.254" layer="1"/>
-<wire x1="0.762" y1="-7.747" x2="2.849" y2="-5.66" width="0.254" layer="1"/>
+<wire x1="0.889" y1="-7.62" x2="2.849" y2="-5.66" width="0.254" layer="1"/>
 </signal>
 <signal name="LED1-R">
 <contactref element="LED1" pad="C"/>
 <contactref element="R4" pad="1"/>
 <wire x1="-6.545" y1="0.543" x2="-7.493" y2="1.491" width="0.254" layer="1"/>
-<wire x1="-7.493" y1="1.491" x2="-7.493" y2="10.668" width="0.254" layer="1"/>
-<wire x1="-7.493" y1="10.668" x2="-8.128" y2="11.303" width="0.254" layer="1"/>
-<wire x1="-8.128" y1="11.303" x2="-8.602" y2="11.303" width="0.254" layer="1"/>
+<wire x1="-7.493" y1="1.491" x2="-7.493" y2="8.255" width="0.254" layer="1"/>
+<wire x1="-7.493" y1="8.255" x2="-8.602" y2="9.364" width="0.254" layer="1"/>
+<wire x1="-8.602" y1="11.303" x2="-8.602" y2="9.364" width="0.254" layer="1"/>
 </signal>
 <signal name="LED2-R">
 <contactref element="LED2" pad="C"/>
@@ -2471,7 +2497,11 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <wire x1="5.334" y1="-17.653" x2="4.445" y2="-16.764" width="0.254" layer="1"/>
 <contactref element="U2" pad="8"/>
 <wire x1="4.3254" y1="-6.93" x2="4.445" y2="-7.0496" width="0.254" layer="1"/>
-<wire x1="4.445" y1="-7.0496" x2="4.445" y2="-16.764" width="0.254" layer="1"/>
+<wire x1="4.445" y1="-7.0496" x2="4.445" y2="-9.398" width="0.254" layer="1"/>
+<wire x1="4.445" y1="-9.398" x2="5.207" y2="-10.16" width="0.254" layer="1"/>
+<wire x1="5.207" y1="-10.16" x2="5.207" y2="-13.335" width="0.254" layer="1"/>
+<wire x1="5.207" y1="-13.335" x2="4.445" y2="-14.097" width="0.254" layer="1"/>
+<wire x1="4.445" y1="-14.097" x2="4.445" y2="-16.764" width="0.254" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
@@ -2481,17 +2511,13 @@ Source: http://www.taiwansemi.com .. 5205_0409c.pdf</description>
 <mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
 </mfgpreviewcolors>
-<errors>
-<approved hash="4,1,1e4bfda97a5d8769"/>
-<approved hash="4,1,3f864f0c84de5fae"/>
-<approved hash="4,1,2f8587333f1c3c50"/>
-<approved hash="4,16,1e4bfda97a5d8769"/>
-<approved hash="4,16,3f864f0c84de5fae"/>
-<approved hash="4,16,2f8587333f1c3c50"/>
-</errors>
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
