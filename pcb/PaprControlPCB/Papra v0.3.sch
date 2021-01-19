@@ -92,6 +92,8 @@
 <layer number="111" name="LPC17xx" color="7" fill="1" visible="no" active="yes"/>
 <layer number="112" name="tSilk" color="7" fill="1" visible="no" active="yes"/>
 <layer number="113" name="ReferenceLS" color="7" fill="1" visible="no" active="no"/>
+<layer number="114" name="Badge_Outline" color="11" fill="1" visible="no" active="no"/>
+<layer number="115" name="ReferenceISLANDS" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="no" active="no"/>
 <layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
@@ -177,11 +179,11 @@
 <text x="-3.2766" y="-0.635" size="1.27" layer="25" ratio="6" rot="SR0">&gt;Name</text>
 </package>
 <package name="P091S-FC20BR">
-<wire x1="-13.3" y1="4.65" x2="0" y2="4.65" width="0.2032" layer="51"/>
+<wire x1="-13.3" y1="4.65" x2="0" y2="4.65" width="0.2032" layer="21"/>
 <wire x1="0" y1="4.65" x2="0" y2="3.9" width="0.2032" layer="21"/>
 <wire x1="0" y1="3.9" x2="0" y2="-3.9" width="0.2032" layer="21"/>
 <wire x1="0" y1="-3.9" x2="0" y2="-4.65" width="0.2032" layer="21"/>
-<wire x1="0" y1="-4.65" x2="-13.3" y2="-4.65" width="0.2032" layer="51"/>
+<wire x1="0" y1="-4.65" x2="-13.3" y2="-4.65" width="0.2032" layer="21"/>
 <wire x1="-13.3" y1="-4.65" x2="-13.3" y2="4.65" width="0.2032" layer="21"/>
 <wire x1="5" y1="2.9" x2="20" y2="2.9" width="0.2032" layer="21"/>
 <wire x1="20" y1="2.9" x2="20" y2="-2.9" width="0.2032" layer="21"/>
@@ -213,7 +215,6 @@
 <pad name="GNDBREAK" x="4.8" y="11.2" drill="2.5" rot="R90"/>
 <text x="-5.08" y="5.84" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 <text x="8.35" y="2.84" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<text x="-2.302" y="1.11" size="0.8128" layer="51">DC 2.0/2.1</text>
 <wire x1="4.2" y1="2.7" x2="4.2" y2="14.2" width="0.2032" layer="21"/>
 <wire x1="4.2" y1="2.7" x2="5.5" y2="2.7" width="0.2032" layer="21"/>
 <wire x1="5.5" y1="2.7" x2="5.5" y2="0" width="0.2032" layer="21"/>
@@ -21488,13 +21489,13 @@ v.3
 <approved hash="202,1,254,111.76,U1,CB,,,,"/>
 <approved hash="104,1,20.32,193.04,U2,VCC,+5V,,,"/>
 <approved hash="105,1,57.15,134.62,BORDERLINES,,,,,"/>
-<approved hash="108,1,154.94,66.04,BORDERLINES,,,,,"/>
-<approved hash="108,1,109.22,66.04,BORDERLINES,,,,,"/>
-<approved hash="108,1,185.42,134.62,BORDERLINES,,,,,"/>
-<approved hash="108,1,109.22,134.62,BORDERLINES,,,,,"/>
-<approved hash="108,1,185.42,88.9,BORDERLINES,,,,,"/>
 <approved hash="108,1,157.48,134.62,BORDERLINES,,,,,"/>
+<approved hash="108,1,185.42,134.62,BORDERLINES,,,,,"/>
+<approved hash="108,1,185.42,88.9,BORDERLINES,,,,,"/>
 <approved hash="108,1,88.9,66.04,BORDERLINES,,,,,"/>
+<approved hash="108,1,109.22,66.04,BORDERLINES,,,,,"/>
+<approved hash="108,1,154.94,66.04,BORDERLINES,,,,,"/>
+<approved hash="108,1,109.22,134.62,BORDERLINES,,,,,"/>
 </errors>
 </schematic>
 </drawing>
