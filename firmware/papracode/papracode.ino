@@ -1,4 +1,4 @@
-tt/*
+/*
   papracode
     - Reads battery voltage and lights up LEDs to mimic M12 battery fuel gauge
     - Reads user pot to control PWM of fan
@@ -19,11 +19,19 @@ tt/*
 //serial debug takes up about 1300 bytes of flash, out of 4096 available, not including print statements
 #define DEBUG_SERIAL   //uncomment line to enable serial debug
 
+#ifdef MILLIS_USE_TIMERA0
+#error "This sketch takes over TCA0 - please use a different timer for millis"
+#endif
+
+#ifndef MILLIS_USE_TIMERB0
+#error "This sketch is written for use with TCB0 as the millis timing source"
+#endif
+
 // Pin connections per PAPR V0.2 PCB
 // PA0 - UPDI/RESET
 // PA1 - ADC - BATTERY
 // PA2 - ADC = POTENTIOMETER
-// PA3 - PWM - FAN
+// PA3 - PWM - FAN (uses Timer TCA0)
 // PA4 - EXT PWR SENSE 
 // PA5 - LED1
 // PA6 - LED2
@@ -102,7 +110,11 @@ void setup() {
   pinMode(led2, OUTPUT);
   pinMode(led3, OUTPUT);
   pinMode(led4, OUTPUT);
-  pinMode(PWMPin, OUTPUT);
+  pinMode(PWMPin, OUTPUT);  //PA3 - TCA0 WO3, pin1 on 14-pin parts
+  TCA0.SPLIT.CTRLB=TCA_SPLIT_LCMP0EN_bm|TCA_SPLIT_HCMP2EN_bm; //PWM on WO3
+  TCA0.SPLIT.LPER=0xFA; // Count down from 250 on WO0/WO1/WO2
+  TCA0.SPLIT.HPER=0xFA; // Count down from 250 on WO3/WO4/WO5
+  TCA0.SPLIT.CTRLA=TCA_SPLIT_CLKSEL_DIV2_gc|TCA_SPLIT_ENABLE_bm; //enable the timer with prescaler of 2
   pinMode(fanSense, INPUT);
   pinMode(extPwrSense, INPUT);  
 
@@ -114,7 +126,7 @@ void setup() {
 #ifdef DEBUG_SERIAL
   Serial.begin(115200);
   Serial.println("Starting up");
-  Serial.println("PAPRA 09JAN2021");
+  Serial.println("PAPRA 25JAN2021");
   Serial.println("PCB v0.2");
   Serial.println("AtTiny 1604");
   Serial.println("(c) Tetra Bio Distributed 2021");
@@ -149,7 +161,8 @@ void loop() {
   else {
     fanPWM = maxPWM;
   }  
-  analogWrite(PWMPin, fanPWM);
+  //analogWrite(PWMPin, fanPWM);
+  TCA0.SPLIT.HCMP0 = fanPWM;  //Write duty cycle to WO3
   battery = battery = ( ( battery * ( numBatterySamples - 1 ) ) + analogRead(analogBatt) ) / numBatterySamples;
   switch (battery) {
     case battADC78p ... battADCMax: // Full = 78% - 100%
