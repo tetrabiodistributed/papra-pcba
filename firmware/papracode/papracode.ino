@@ -1,4 +1,4 @@
-tt/*
+/*
   papracode
     - Reads battery voltage and lights up LEDs to mimic M12 battery fuel gauge
     - Reads user pot to control PWM of fan
@@ -19,11 +19,19 @@ tt/*
 //serial debug takes up about 1300 bytes of flash, out of 4096 available, not including print statements
 #define DEBUG_SERIAL   //uncomment line to enable serial debug
 
+#ifdef MILLIS_USE_TIMERA0
+#error "This sketch takes over TCA0 - please use a different timer for millis"
+#endif
+
+#ifndef MILLIS_USE_TIMERB0
+#error "This sketch is written for use with TCB0 as the millis timing source"
+#endif
+
 // Pin connections per PAPR V0.2 PCB
 // PA0 - UPDI/RESET
 // PA1 - ADC - BATTERY
 // PA2 - ADC = POTENTIOMETER
-// PA3 - PWM - FAN
+// PA3 - PWM - FAN (uses Timer TCA0)
 // PA4 - EXT PWR SENSE 
 // PA5 - LED1
 // PA6 - LED2
@@ -62,11 +70,11 @@ const int battADCMin  =     0;
 
 
 //Limits the min pot value     Voltage   Min PWM Percentage
-const int minPWMfull =  69;  //11.85V      69     >77%
-const int minPWM75p  =  72;  //11.10V      72     >54%
-const int minPWM50p  =  77;  //10.62V      77     >33%
-const int minPWM25p  =  88;  //9.75V       88     >10%
-const int minPWM10p  = 120;  //8.40V      110     >0%
+const int minPWMfull =  50;  //11.85V      69     >77%
+const int minPWM75p  =  55;  //11.10V      72     >54%
+const int minPWM50p  =  61;  //10.62V      77     >33%
+const int minPWM25p  =  70;  //9.75V       88     >10%
+const int minPWM10p  = 126;  //8.40V      110     >0%
 //These values were determined emperically by adjusting the input voltage and dialing the PWM down until motor stall
 
 //State Machine states
@@ -102,7 +110,11 @@ void setup() {
   pinMode(led2, OUTPUT);
   pinMode(led3, OUTPUT);
   pinMode(led4, OUTPUT);
-  pinMode(PWMPin, OUTPUT);
+  pinMode(PWMPin, OUTPUT);  //PA3 - TCA0 WO3, pin1 on 14-pin parts
+  TCA0.SPLIT.CTRLB=TCA_SPLIT_LCMP0EN_bm|TCA_SPLIT_HCMP0EN_bm; //PWM on WO0 & WO3
+  TCA0.SPLIT.LPER=0xFF; // Count down from 255 on WO0/WO1/WO2
+  TCA0.SPLIT.HPER=0xFF; // Count down from 255 on WO3/WO4/WO5
+  TCA0.SPLIT.CTRLA=TCA_SPLIT_CLKSEL_DIV4_gc|TCA_SPLIT_ENABLE_bm; //enable the timer with prescaler of 4
   pinMode(fanSense, INPUT);
   pinMode(extPwrSense, INPUT);  
 
@@ -114,7 +126,7 @@ void setup() {
 #ifdef DEBUG_SERIAL
   Serial.begin(115200);
   Serial.println("Starting up");
-  Serial.println("PAPRA 09JAN2021");
+  Serial.println("PAPRA 31JAN2021");
   Serial.println("PCB v0.2");
   Serial.println("AtTiny 1604");
   Serial.println("(c) Tetra Bio Distributed 2021");
@@ -144,7 +156,7 @@ void loop() {
   //Clamp and rescale potentiometer input from a 10bit value to 8 bit
   if (maxPWM > 0) {
     rawADC = analogRead(analogPot);
-    fanPWM = map( rawADC, minPot, maxPot, maxPWM, minPWM );
+    fanPWM = map( rawADC, minPot, maxPot, maxPWM, minPWM ); //Inverts the knob scale, 10 bits to 8 bits
   } 
   else {
     fanPWM = maxPWM;
