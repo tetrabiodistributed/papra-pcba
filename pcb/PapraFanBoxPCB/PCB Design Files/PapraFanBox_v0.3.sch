@@ -228,22 +228,21 @@
 </library>
 <library name="PC-LIB">
 <packages>
-<package name="DCJACK-PJ-066A">
-<wire x1="5.5" y1="0" x2="-5.5" y2="0" width="0.2032" layer="21"/>
-<wire x1="-5.5" y1="2.7" x2="-5.5" y2="0" width="0.2032" layer="21"/>
-<wire x1="-4.2" y1="2.7" x2="-5.5" y2="2.7" width="0.2032" layer="21"/>
-<wire x1="-4.2" y1="2.7" x2="4.2" y2="2.7" width="0.2032" layer="21"/>
-<wire x1="-4.2" y1="2.7" x2="-4.2" y2="14.2" width="0.2032" layer="21"/>
-<wire x1="-4.2" y1="14.2" x2="4.2" y2="14.2" width="0.2032" layer="21"/>
-<pad name="PWR" x="0" y="14.2" drill="2.5"/>
-<pad name="GND" x="0" y="8.1" drill="2.6"/>
-<pad name="GNDBREAK" x="4.8" y="11.2" drill="2.5" rot="R90"/>
-<text x="-5.08" y="5.84" size="1.27" layer="25" rot="R90">&gt;NAME</text>
-<text x="8.35" y="2.84" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<text x="-2.302" y="1.11" size="0.8128" layer="51">DC 2.0/2.1</text>
-<wire x1="4.2" y1="2.7" x2="4.2" y2="14.2" width="0.2032" layer="21"/>
-<wire x1="4.2" y1="2.7" x2="5.5" y2="2.7" width="0.2032" layer="21"/>
-<wire x1="5.5" y1="2.7" x2="5.5" y2="0" width="0.2032" layer="21"/>
+<package name="DCJACK-L722RAS">
+<wire x1="7.874" y1="0" x2="-7.874" y2="0" width="0.2032" layer="21"/>
+<wire x1="-7.874" y1="1.524" x2="-7.874" y2="0" width="0.2032" layer="21"/>
+<wire x1="-4.8514" y1="1.524" x2="-7.874" y2="1.524" width="0.2032" layer="21"/>
+<wire x1="-4.8514" y1="1.524" x2="4.8514" y2="1.524" width="0.2032" layer="21"/>
+<wire x1="-4.8514" y1="1.524" x2="-4.8514" y2="16.8656" width="0.2032" layer="21"/>
+<wire x1="-4.8514" y1="16.8656" x2="4.8514" y2="16.8656" width="0.2032" layer="21"/>
+<pad name="PWR" x="-3.302" y="15.494" drill="1.7018"/>
+<pad name="GND" x="0" y="9.906" drill="1.7018"/>
+<pad name="GNDBREAK" x="3.302" y="15.494" drill="1.7526" rot="R90"/>
+<text x="-5.08" y="5.84" size="1.27" layer="25" font="vector" ratio="13" rot="R90">&gt;NAME</text>
+<wire x1="4.8514" y1="1.524" x2="4.8514" y2="16.8656" width="0.2032" layer="21"/>
+<wire x1="4.8514" y1="1.524" x2="7.874" y2="1.524" width="0.2032" layer="21"/>
+<wire x1="7.874" y1="1.524" x2="7.874" y2="0" width="0.2032" layer="21"/>
+<text x="-4.32" y="2.54" size="1.27" layer="27" font="vector" ratio="13">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -261,20 +260,76 @@
 <pin name="TIP" x="2.54" y="2.54" visible="off" length="short" rot="R180"/>
 <pin name="RING" x="2.54" y="-2.54" visible="off" length="short" rot="R180"/>
 <pin name="RING_SW" x="2.54" y="0" visible="off" length="short" rot="R180"/>
+<text x="-5.08" y="-5.08" size="1.27" layer="96">&gt;VALUE</text>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="PJ-066A">
+<deviceset name="SWITCHCRAFT-L722RAS">
 <gates>
 <gate name="G$1" symbol="DC-JACK" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="DCJACK-PJ-066A">
+<device name="SWITCHCRAFTSEALED" package="DCJACK-L722RAS">
 <connects>
 <connect gate="G$1" pin="RING" pad="GND"/>
 <connect gate="G$1" pin="RING_SW" pad="GNDBREAK"/>
 <connect gate="G$1" pin="TIP" pad="PWR"/>
 </connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="frames" urn="urn:adsk.eagle:library:229">
+<description>&lt;b&gt;Frames for Sheet and Layout&lt;/b&gt;</description>
+<packages>
+</packages>
+<symbols>
+<symbol name="FRAME_A_L" urn="urn:adsk.eagle:symbol:13882/1" library_version="1">
+<frame x1="0" y1="0" x2="279.4" y2="215.9" columns="6" rows="5" layer="94" border-bottom="no"/>
+</symbol>
+<symbol name="DOCFIELD" urn="urn:adsk.eagle:symbol:13864/1" library_version="1">
+<wire x1="0" y1="0" x2="71.12" y2="0" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="15.24" x2="87.63" y2="15.24" width="0.1016" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="0" y1="5.08" x2="71.12" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="0" y1="5.08" x2="0" y2="15.24" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="15.24" x2="101.6" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="71.12" y1="5.08" x2="71.12" y2="0" width="0.1016" layer="94"/>
+<wire x1="71.12" y1="5.08" x2="87.63" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="71.12" y1="0" x2="101.6" y2="0" width="0.1016" layer="94"/>
+<wire x1="87.63" y1="15.24" x2="87.63" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="87.63" y1="15.24" x2="0" y2="15.24" width="0.1016" layer="94"/>
+<wire x1="87.63" y1="5.08" x2="101.6" y2="5.08" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="5.08" x2="101.6" y2="0" width="0.1016" layer="94"/>
+<wire x1="0" y1="15.24" x2="0" y2="22.86" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="35.56" x2="0" y2="35.56" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="35.56" x2="101.6" y2="22.86" width="0.1016" layer="94"/>
+<wire x1="0" y1="22.86" x2="101.6" y2="22.86" width="0.1016" layer="94"/>
+<wire x1="0" y1="22.86" x2="0" y2="35.56" width="0.1016" layer="94"/>
+<wire x1="101.6" y1="22.86" x2="101.6" y2="15.24" width="0.1016" layer="94"/>
+<text x="1.27" y="1.27" size="2.54" layer="94">Date:</text>
+<text x="12.7" y="1.27" size="2.54" layer="94">&gt;LAST_DATE_TIME</text>
+<text x="72.39" y="1.27" size="2.54" layer="94">Sheet:</text>
+<text x="86.36" y="1.27" size="2.54" layer="94">&gt;SHEET</text>
+<text x="88.9" y="11.43" size="2.54" layer="94">REV:</text>
+<text x="1.27" y="19.05" size="2.54" layer="94">TITLE:</text>
+<text x="1.27" y="11.43" size="2.54" layer="94">Document Number:</text>
+<text x="17.78" y="19.05" size="2.54" layer="94">&gt;DRAWING_NAME</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="FRAME_A_L" urn="urn:adsk.eagle:component:13939/1" prefix="FRAME" uservalue="yes" library_version="1">
+<description>&lt;b&gt;FRAME&lt;/b&gt; A Size , 8 1/2 x 11 INCH, Landscape&lt;p&gt;</description>
+<gates>
+<gate name="G$1" symbol="FRAME_A_L" x="0" y="0" addlevel="always"/>
+<gate name="G$2" symbol="DOCFIELD" x="172.72" y="0" addlevel="always"/>
+</gates>
+<devices>
+<device name="">
 <technologies>
 <technology name=""/>
 </technologies>
@@ -289,26 +344,46 @@
 <variantdefs>
 </variantdefs>
 <classes>
-<class number="0" name="default" width="0" drill="0">
+<class number="0" name="default" width="0.254" drill="0">
+<clearance class="0" value="0.2032"/>
+</class>
+<class number="1" name="RAIL" width="0.508" drill="0">
+<clearance class="1" value="0.254"/>
 </class>
 </classes>
 <parts>
 <part name="H2" library="Connector" library_urn="urn:adsk.eagle:library:16378166" deviceset="S2B-XH-A" device="" package3d_urn="urn:adsk.eagle:package:24957651/1"/>
-<part name="H1" library="PC-LIB" deviceset="PJ-066A" device=""/>
+<part name="H1" library="PC-LIB" deviceset="SWITCHCRAFT-L722RAS" device="SWITCHCRAFTSEALED" value="L722RAS"/>
+<part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="FRAME_A_L" device="" value="NONE"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="33.02" y="43.18" size="1.778" layer="91">Power from M12 controller</text>
-<text x="81.28" y="43.18" size="1.778" layer="91">To 12V DC  Blower</text>
+<text x="88.9" y="93.98" size="1.778" layer="91">Power from M12 controller</text>
+<text x="137.16" y="93.98" size="1.778" layer="91">To 12V DC  Blower</text>
+<text x="7.62" y="208.28" size="1.778" layer="97" font="vector" align="top-left">v.3 changelog
+
+- Replaced DC Jack with Switchcraft Sealed device
+- Added schematic drawing border
+- Added Tetra Logo to bottom of PCB
+
+</text>
+<text x="223.52" y="30.48" size="5.08" layer="97" align="center">TETRA BIO DISTRIBUTED</text>
 </plain>
 <instances>
-<instance part="H2" gate="G$1" x="91.44" y="50.8" smashed="yes">
-<attribute name="NAME" x="91.44" y="46.8" size="1.778" layer="95" align="center"/>
-<attribute name="VALUE" x="91.44" y="57.34" size="1.778" layer="95" align="center"/>
+<instance part="H2" gate="G$1" x="147.32" y="101.6" smashed="yes">
+<attribute name="NAME" x="147.32" y="97.6" size="1.778" layer="95" align="center"/>
+<attribute name="VALUE" x="147.32" y="108.14" size="1.778" layer="95" align="center"/>
 </instance>
-<instance part="H1" gate="G$1" x="50.8" y="50.8" smashed="yes">
-<attribute name="NAME" x="45.72" y="55.88" size="1.27" layer="95"/>
+<instance part="H1" gate="G$1" x="106.68" y="101.6" smashed="yes">
+<attribute name="NAME" x="101.6" y="106.68" size="1.27" layer="95"/>
+<attribute name="VALUE" x="101.6" y="96.52" size="1.27" layer="96"/>
+</instance>
+<instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes"/>
+<instance part="FRAME1" gate="G$2" x="172.72" y="0" smashed="yes">
+<attribute name="LAST_DATE_TIME" x="185.42" y="1.27" size="2.54" layer="94"/>
+<attribute name="SHEET" x="259.08" y="1.27" size="2.54" layer="94"/>
+<attribute name="DRAWING_NAME" x="190.5" y="19.05" size="2.54" layer="94"/>
 </instance>
 </instances>
 <busses>
@@ -316,23 +391,23 @@
 <nets>
 <net name="+12VDC" class="0">
 <segment>
-<pinref part="H1" gate="G$1" pin="TIP"/>
 <pinref part="H2" gate="G$1" pin="1"/>
-<wire x1="53.34" y1="53.34" x2="86.29" y2="53.34" width="0.1524" layer="91"/>
-<label x="66.04" y="53.34" size="1.778" layer="95"/>
+<wire x1="109.22" y1="104.14" x2="142.17" y2="104.14" width="0.1524" layer="91"/>
+<label x="121.92" y="104.14" size="1.778" layer="95"/>
+<pinref part="H1" gate="G$1" pin="TIP"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="H1" gate="G$1" pin="RING_SW"/>
 <pinref part="H2" gate="G$1" pin="2"/>
-<wire x1="53.34" y1="50.8" x2="58.42" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="101.6" x2="114.3" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="101.6" x2="142.17" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="109.22" y1="99.06" x2="114.3" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="99.06" x2="114.3" y2="101.6" width="0.1524" layer="91"/>
+<junction x="114.3" y="101.6"/>
+<label x="121.92" y="101.6" size="1.778" layer="95"/>
 <pinref part="H1" gate="G$1" pin="RING"/>
-<wire x1="58.42" y1="50.8" x2="86.29" y2="50.8" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="48.26" x2="58.42" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="58.42" y1="48.26" x2="58.42" y2="50.8" width="0.1524" layer="91"/>
-<junction x="58.42" y="50.8"/>
-<label x="66.04" y="50.8" size="1.778" layer="95"/>
+<pinref part="H1" gate="G$1" pin="RING_SW"/>
 </segment>
 </net>
 </nets>
@@ -341,6 +416,10 @@
 </schematic>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
 <note version="8.2" severity="warning">
 Since Version 8.2, EAGLE supports online libraries. The ids
 of those online libraries will not be understood (or retained)
