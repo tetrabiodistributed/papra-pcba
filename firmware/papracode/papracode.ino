@@ -36,10 +36,10 @@
 // PA5 - LED1
 // PA6 - LED2
 // PA7 - LED3
-// PB0 - UART RX
-// PB1 - UART TX
-// PB2 - FAN CONNECTION SENSE
-// PB3 - LED4
+// PB0 - LED4
+// PB1 - FAN CONNECTION SENSE
+// PB2 - UART TX
+// PB3 - UART RX
 
 int analogBatt = PIN_A1; //10 bit resolution on ADC 
 int analogPot = PIN_A2;  // Fan speed control POT with on/off switch
