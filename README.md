@@ -9,11 +9,11 @@ Please note that there are a number of ATTiny SKUs that are compatible with this
 
 | Model number   | Confirmed   | Notes                             |
 | -------------- | ----------- | --------------------------------- |
-| ATtiny204SSN_, | Yes         |Serial debugging must be disabled	 |
+| ATtiny204SSN_, | Yes         |Support SerialEvent must be 'no'   |
 | ATtiny404SSN_, | Yes         |    	                             |
 | ATtiny804SSN_, | No          |                                   |
 | ATtiny1604SSN_,| Yes         |    	                             |
-| ATtiny214SSN_, | No          |Serial debugging must be disabled  |
+| ATtiny214SSN_, | No          |Support SerialEvent must be 'no'   |
 | ATtiny414SSN_, | No          |    	                             |
 | ATtiny814SSN_, | No          |                                   |
 | ATtiny1614SSN_,| No          |    	                             |
