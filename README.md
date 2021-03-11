@@ -6,7 +6,7 @@ Notes for programming:
 * Setup Arduino: https://www.hackster.io/john-bradnam/using-the-new-attiny-processors-with-arduino-ide-612185
 * You will need to use the megaTinyCore library by SpenceKonde: https://github.com/SpenceKonde/megaTinyCore
 
-![ArduinoConfig](https://user-images.githubusercontent.com/31858409/110670981-e8d8e100-81c5-11eb-92fa-785aacdcc1c1.PNG)
+![ArduinoConfig](https://user-images.githubusercontent.com/31858409/110745376-0f813100-8233-11eb-9dcd-ba6e8b78217b.PNG)
 
 Please note that there are a number of ATTiny SKUs that are compatible with this PCB and code, please refer to the below table when choosing an appropriate IC.
 
