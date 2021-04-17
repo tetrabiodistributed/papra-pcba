@@ -12,12 +12,15 @@ Please note that there are a number of ATTiny SKUs that are compatible with this
 
 | Model number   | Confirmed   | Notes                             |
 | -------------- | ----------- | --------------------------------- |
-| ATtiny204SSN_, | Yes         |Support SerialEvent must be 'no'   |
+| ATtiny204SSN_, | Yes         | See note below                    |
 | ATtiny404SSN_, | Yes         |    	                             |
 | ATtiny804SSN_, | No          |                                   |
 | ATtiny1604SSN_,| Yes         |    	                             |
-| ATtiny214SSN_, | No          |Support SerialEvent must be 'no'   |
-| ATtiny414SSN_, | No          |    	                             |
-| ATtiny814SSN_, | No          |                                   |
-| ATtiny1614SSN_,| No          |    	                             |
+| ATtiny214SSN_, | Yes         | See note below                    |
+| ATtiny414SSN_, | Yes         |    	                             |
+| ATtiny814SSN_, | Yes         |                                   |
+| ATtiny1614SSN_,| Yes         |    	                             |
+| ATtiny1624SSU_,| Yes         | Megatinycore 2.3.1 req'd          |
+
+ATtiny 204 and 214 must have all serial debug removed in addition to the startup knight-rider LED sequence to fit in the 2K code space. 
 
