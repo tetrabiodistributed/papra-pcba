@@ -1,9 +1,0 @@
-The Teta PAPRA project requires 2 PCBAs
-
-PapraFanBoxPCB - this is a connection board
-PaprControlPCB - this is a speed controller that allows for adjusting speed of blower
-
-Note:
-A PCB is a bare board.
-A PCBA is an assembly of a PCB and OTS (off the shelf) components, which are typically a mix of surface mount and thru-hole components.
-
