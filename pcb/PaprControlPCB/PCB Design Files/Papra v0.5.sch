@@ -21800,6 +21800,7 @@ v.5
 <wire x1="248.92" y1="177.8" x2="213.36" y2="177.8" width="0.1524" layer="91"/>
 <pinref part="D2" gate="G$1" pin="A"/>
 <wire x1="210.82" y1="177.8" x2="213.36" y2="177.8" width="0.1524" layer="91"/>
+<junction x="213.36" y="177.8"/>
 </segment>
 </net>
 <net name="12V-FAN" class="0">
@@ -21850,7 +21851,7 @@ v.5
 <pinref part="SG1" gate="1" pin="-"/>
 </segment>
 </net>
-<net name="N$2" class="1">
+<net name="12V-DIODEOR" class="1">
 <segment>
 <pinref part="D2" gate="G$1" pin="C"/>
 <wire x1="198.12" y1="177.8" x2="200.66" y2="177.8" width="0.1524" layer="91"/>
@@ -21883,15 +21884,16 @@ v.5
 <errors>
 <approved hash="202,1,254,111.76,U1,CB,,,,"/>
 <approved hash="104,1,20.32,193.04,U2,VCC,+5V,,,"/>
-<approved hash="105,1,57.15,134.62,BORDERLINES,,,,,"/>
-<approved hash="106,1,78.74,182.88,FAN-SENSE,,,,,"/>
-<approved hash="108,1,109.22,66.04,BORDERLINES,,,,,"/>
-<approved hash="108,1,185.42,88.9,BORDERLINES,,,,,"/>
-<approved hash="108,1,109.22,134.62,BORDERLINES,,,,,"/>
+<approved hash="105,1,36.83,134.62,BORDERLINES,,,,,"/>
 <approved hash="108,1,157.48,134.62,BORDERLINES,,,,,"/>
-<approved hash="108,1,154.94,66.04,BORDERLINES,,,,,"/>
 <approved hash="108,1,185.42,134.62,BORDERLINES,,,,,"/>
+<approved hash="108,1,185.42,88.9,BORDERLINES,,,,,"/>
+<approved hash="108,1,127,134.62,BORDERLINES,,,,,"/>
 <approved hash="108,1,88.9,66.04,BORDERLINES,,,,,"/>
+<approved hash="108,1,68.58,134.62,BORDERLINES,,,,,"/>
+<approved hash="108,1,154.94,66.04,BORDERLINES,,,,,"/>
+<approved hash="108,1,68.58,66.04,BORDERLINES,,,,,"/>
+<approved hash="108,1,127,66.04,BORDERLINES,,,,,"/>
 </errors>
 </schematic>
 </drawing>
