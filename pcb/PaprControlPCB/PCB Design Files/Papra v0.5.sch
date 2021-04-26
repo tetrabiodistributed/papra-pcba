@@ -21121,13 +21121,14 @@ v.4
 v.5
 - Removed GROUND-SWITCH &amp; FAN-SENSE
 - Added 2nd fuse for fan 12V power
-- Added buzzer circuit
+- Added buzzer circuit, driven by PB1
+- Moved LED4 to PA4
 - Changed LEDs to bright Green
 - Changed LED current limited resistors to 120R
 - Changed FET gate resistor to 120R
 - Changed UPDI Resistor to 1.02K, per recommendation
-- Added Schottky Diode for reverse polarity protection on DC input and battery input
 - Changed Schottky diode to SOD-123 2AMP package
+- Added Schottky Diode for reverse polarity protection on DC input and battery input
 - Schematic cleanup, mild</text>
 <text x="93.98" y="129.54" size="1.778" layer="91">BUZZER</text>
 </plain>
@@ -21741,9 +21742,9 @@ v.5
 <label x="76.2" y="22.86" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="PB1/AIN10/XCK/SDA/WO1"/>
-<wire x1="78.74" y1="165.1" x2="93.98" y2="165.1" width="0.1524" layer="91"/>
-<label x="93.98" y="165.1" size="1.27" layer="95" xref="yes"/>
+<wire x1="78.74" y1="180.34" x2="93.98" y2="180.34" width="0.1524" layer="91"/>
+<label x="93.98" y="180.34" size="1.27" layer="95" xref="yes"/>
+<pinref part="U2" gate="G$1" pin="PA4/AIN4/XDIR(ALT)/SS/WO4/LUT-OUT0"/>
 </segment>
 </net>
 <net name="LED1-R" class="0">
@@ -21838,9 +21839,9 @@ v.5
 <label x="83.82" y="93.98" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="PA3/EXTCLK/AIN3/XCK(ALT)/SCK/WO3"/>
-<wire x1="78.74" y1="182.88" x2="93.98" y2="182.88" width="0.1524" layer="91"/>
-<label x="93.98" y="182.88" size="1.27" layer="95" xref="yes"/>
+<wire x1="78.74" y1="165.1" x2="93.98" y2="165.1" width="0.1524" layer="91"/>
+<label x="93.98" y="165.1" size="1.27" layer="95" xref="yes"/>
+<pinref part="U2" gate="G$1" pin="PB1/AIN10/XCK/SDA/WO1"/>
 </segment>
 </net>
 <net name="BUZZER-GND" class="1">
@@ -21885,15 +21886,15 @@ v.5
 <approved hash="202,1,254,111.76,U1,CB,,,,"/>
 <approved hash="104,1,20.32,193.04,U2,VCC,+5V,,,"/>
 <approved hash="105,1,36.83,134.62,BORDERLINES,,,,,"/>
-<approved hash="108,1,157.48,134.62,BORDERLINES,,,,,"/>
-<approved hash="108,1,185.42,134.62,BORDERLINES,,,,,"/>
-<approved hash="108,1,185.42,88.9,BORDERLINES,,,,,"/>
-<approved hash="108,1,127,134.62,BORDERLINES,,,,,"/>
-<approved hash="108,1,88.9,66.04,BORDERLINES,,,,,"/>
-<approved hash="108,1,68.58,134.62,BORDERLINES,,,,,"/>
-<approved hash="108,1,154.94,66.04,BORDERLINES,,,,,"/>
 <approved hash="108,1,68.58,66.04,BORDERLINES,,,,,"/>
 <approved hash="108,1,127,66.04,BORDERLINES,,,,,"/>
+<approved hash="108,1,127,134.62,BORDERLINES,,,,,"/>
+<approved hash="108,1,185.42,134.62,BORDERLINES,,,,,"/>
+<approved hash="108,1,157.48,134.62,BORDERLINES,,,,,"/>
+<approved hash="108,1,68.58,134.62,BORDERLINES,,,,,"/>
+<approved hash="108,1,88.9,66.04,BORDERLINES,,,,,"/>
+<approved hash="108,1,185.42,88.9,BORDERLINES,,,,,"/>
+<approved hash="108,1,154.94,66.04,BORDERLINES,,,,,"/>
 </errors>
 </schematic>
 </drawing>
