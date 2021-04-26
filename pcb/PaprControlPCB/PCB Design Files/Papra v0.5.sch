@@ -396,6 +396,7 @@
 <wire x1="0" y1="-5.08" x2="-2.54" y2="-5.08" width="0.1524" layer="94"/>
 <wire x1="-2.54" y1="-5.08" x2="-2.54" y2="-2.54" width="0.1524" layer="94"/>
 <wire x1="-2.54" y1="-2.54" x2="-1.778" y2="-1.778" width="0.1524" layer="94"/>
+<pin name="P3" x="5.08" y="-10.16" visible="pad" length="middle" direction="pas" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -506,6 +507,7 @@
 <connects>
 <connect gate="G$1" pin="P1" pad="SIGNAL"/>
 <connect gate="G$1" pin="P2" pad="SHIELD"/>
+<connect gate="G$1" pin="P3" pad="P$1 P$2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -21560,7 +21562,7 @@ v.5
 </net>
 <net name="FAN-GND" class="1">
 <segment>
-<label x="45.72" y="101.6" size="1.778" layer="95"/>
+<label x="43.18" y="101.6" size="1.778" layer="95"/>
 <pinref part="D1" gate="G$1" pin="A"/>
 <wire x1="35.56" y1="106.68" x2="35.56" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="104.14" x2="43.18" y2="104.14" width="0.1524" layer="91"/>
@@ -21879,6 +21881,19 @@ v.5
 <label x="190.5" y="162.56" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="UNUSED" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="PA3/EXTCLK/AIN3/XCK(ALT)/SCK/WO3"/>
+<wire x1="78.74" y1="182.88" x2="93.98" y2="182.88" width="0.1524" layer="91"/>
+<label x="93.98" y="182.88" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="PINS" class="0">
+<segment>
+<pinref part="H2" gate="G$1" pin="P3"/>
+<wire x1="53.34" y1="109.22" x2="48.26" y2="109.22" width="0.1524" layer="91"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
@@ -21886,13 +21901,15 @@ v.5
 <approved hash="202,1,254,111.76,U1,CB,,,,"/>
 <approved hash="104,1,20.32,193.04,U2,VCC,+5V,,,"/>
 <approved hash="105,1,36.83,134.62,BORDERLINES,,,,,"/>
-<approved hash="108,1,68.58,66.04,BORDERLINES,,,,,"/>
-<approved hash="108,1,127,66.04,BORDERLINES,,,,,"/>
+<approved hash="106,1,53.34,109.22,PINS,,,,,"/>
+<approved hash="106,1,78.74,182.88,UNUSED,,,,,"/>
 <approved hash="108,1,127,134.62,BORDERLINES,,,,,"/>
-<approved hash="108,1,185.42,134.62,BORDERLINES,,,,,"/>
-<approved hash="108,1,157.48,134.62,BORDERLINES,,,,,"/>
+<approved hash="108,1,127,66.04,BORDERLINES,,,,,"/>
 <approved hash="108,1,68.58,134.62,BORDERLINES,,,,,"/>
+<approved hash="108,1,185.42,134.62,BORDERLINES,,,,,"/>
+<approved hash="108,1,68.58,66.04,BORDERLINES,,,,,"/>
 <approved hash="108,1,88.9,66.04,BORDERLINES,,,,,"/>
+<approved hash="108,1,157.48,134.62,BORDERLINES,,,,,"/>
 <approved hash="108,1,185.42,88.9,BORDERLINES,,,,,"/>
 <approved hash="108,1,154.94,66.04,BORDERLINES,,,,,"/>
 </errors>
