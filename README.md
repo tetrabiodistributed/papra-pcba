@@ -8,6 +8,8 @@ Notes for programming:
 
 ![ArduinoConfig](https://user-images.githubusercontent.com/31858409/110745376-0f813100-8233-11eb-9dcd-ba6e8b78217b.PNG)
 
+Upload settings can be found in the arduino program. 
+
 Please note that there are a number of ATTiny SKUs that are compatible with this PCB and code, please refer to the below table when choosing an appropriate IC.
 
 | Model number   | Confirmed   | Notes                             |
