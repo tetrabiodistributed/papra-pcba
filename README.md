@@ -23,3 +23,5 @@ Please note that there are a number of ATTiny SKUs that are compatible with this
 | ATtiny814SSN_, | No          |                                   |
 | ATtiny1614SSN_,| No          |    	                             |
 | ATtiny1624SSU, | No          |    	                             |
+
+ATtiny 204 and 214 must have all serial debug removed in addition to the startup sweeping LED sequence to fit in the 2K code space.
