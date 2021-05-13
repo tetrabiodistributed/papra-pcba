@@ -14,14 +14,14 @@ Please note that there are a number of ATTiny SKUs that are compatible with this
 
 | Model number   | Confirmed   | Notes                             |
 | -------------- | ----------- | --------------------------------- |
-| ATtiny204SSN_, | Yes         | See note below                    |
-| ATtiny404SSN_, | Yes         |    	                             |
+| ATtiny204SSN_, | Yes         | Support SerialEvent must be 'no'  |
+| ATtiny404SSN_, | Yes         |    	                           |
 | ATtiny804SSN_, | Yes         |                                   |
-| ATtiny1604SSN_,| Yes         |    	                             |
-| ATtiny214SSN_, | No          |Support SerialEvent must be 'no'   |
-| ATtiny414SSN_, | No          |    	                             |
+| ATtiny1604SSN_,| Yes         |    	                           |
+| ATtiny214SSN_, | No          | Support SerialEvent must be 'no'  |
+| ATtiny414SSN_, | No          |    	                           |
 | ATtiny814SSN_, | No          |                                   |
-| ATtiny1614SSN_,| No          |    	                             |
-| ATtiny1624SSU, | No          |    	                             |
+| ATtiny1614SSN_,| No          |    	                           |
+| ATtiny1624SSU, | No          |    	                           |
 
 ATtiny 204 and 214 must have all serial debug removed in addition to the startup sweeping LED sequence to fit in the 2K code space.
