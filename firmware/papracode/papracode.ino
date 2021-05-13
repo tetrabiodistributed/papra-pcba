@@ -6,18 +6,28 @@
     - look at averaging battery voltage
     - set a MIN PWM value for fan output, vary with battery level
   PCB is compatible with the following 14SOIC ATtiny chips: 404/804/1604 and 414/814/1614 should work (needs testing)
-  Attiny204 - this could work without serial output and some code optimization
+  Attiny204 - not supported, perhaps could work with code minimization
   AtTiny404
-  current code flash: 2204/4096 bytes (53%) RAM: 30/256 (11%) bytes without debug enabled
-               flash: 4021/4096 bytes (98%) RAM: 93/256 (36%) with debug enabled 
+    current code flash: 2126/4096 bytes (51%) RAM: 24/256 ( 9%) bytes without debug enabled
+                 flash: 3902/4096 bytes (95%) RAM: 87/256 (33%) with debug enabled 
   AtTiny1604
-  current code flash: 2452/16384 bytes (14%) RAM:  30/1024 (2%) bytes without debug enabled
-               flash: 4416/16384 bytes (26%) RAM: 189/1024 (18%) with debug enabled 
+  current code flash: ____/16384 bytes (__%) RAM:  30/1024 (2%) bytes without debug enabled
+               flash: 4286/16384 bytes (26%) RAM: 189/1024 (18%) with debug enabled 
  */
 
-//be sure to go to Arduino >> tools >> Support SerialEvent "No(saves space)" or "yes"
-//serial debug takes up about 1300 bytes of flash, out of 4096 available, not including print statements
-#define DEBUG_SERIAL   //uncomment line to enable serial debug
+//MegaTinyCore 2.2.9
+//  Board: ATtiny 1614/...
+//  Chip: ATtiny1614
+//  Clock: 20MHz
+//  millis()/micros() TCB0
+//  Voltage for UART: Closer to 5V
+//  Support SeriaEvent: no
+//  Startup Time: 8mS
+//  BOD level: 4.2V
+//  BOD Mode: Disabled/Disabled
+//  Save EEPROM: EEPROM retained
+
+//#define DEBUG_SERIAL   //uncomment line to enable serial debug
 
 #ifdef MILLIS_USE_TIMERA0
 #error "This sketch takes over TCA0 - please use a different timer for millis"
@@ -27,29 +37,29 @@
 #error "This sketch is written for use with TCB0 as the millis timing source"
 #endif
 
-// Pin connections per PAPR V0.2 PCB
+// Pin connections per PAPR V0.3 PCB
 // PA0 - UPDI/RESET
 // PA1 - ADC - BATTERY
 // PA2 - ADC = POTENTIOMETER
-// PA3 - PWM - FAN (uses Timer TCA0)
+// PA3 - FAN CONNECTION SENSE
 // PA4 - EXT PWR SENSE 
 // PA5 - LED1
 // PA6 - LED2
 // PA7 - LED3
-// PB0 - LED4
-// PB1 - FAN CONNECTION SENSE
+// PB0 - PWM - FAN (uses Timer TCA0)
+// PB1 - LED4
 // PB2 - UART TX
 // PB3 - UART RX
 
-int analogBatt = PIN_A1; //10 bit resolution on ADC 
-int analogPot = PIN_A2;  // Fan speed control POT with on/off switch
-int PWMPin = PIN_PA3;    //8 bit resolution with Arduino AnalogWrite
+int analogBatt  = PIN_A1;  // AIN1 - 10 bit resolution on ADC 
+int analogPot   = PIN_A2;  // AIN2 - Fan speed control POT with on/off switch
+int fanSense    = PIN_PA3;  //(v0.3 change)
 int extPwrSense = PIN_PA4;
-int led1 = PIN_PA5;
-int led2 = PIN_PA6;
-int led3 = PIN_PA7;
-int led4 = PIN_PB0;
-int fanSense = PIN_PB1;
+int led1        = PIN_PA5;
+int led2        = PIN_PA6;
+int led3        = PIN_PA7;
+int PWMPin      = PIN_PB0; // W00 8 bit resolution with Arduino AnalogWrite (v0.3 change)
+int led4        = PIN_PB1;
 
 // Battery Voltage to Fuel Gauge
 // > 4.12V/Cell = 100% - 78% Battery  = 4 LEDs         => 899 > adc > 864
@@ -110,11 +120,11 @@ void setup() {
   pinMode(led2, OUTPUT);
   pinMode(led3, OUTPUT);
   pinMode(led4, OUTPUT);
-  pinMode(PWMPin, OUTPUT);  //PA3 - TCA0 WO3, pin1 on 14-pin parts
-  TCA0.SPLIT.CTRLB=TCA_SPLIT_LCMP0EN_bm|TCA_SPLIT_HCMP0EN_bm; //PWM on WO0 & WO3
-  TCA0.SPLIT.LPER=0xFF; // Count down from 255 on WO0/WO1/WO2
-  TCA0.SPLIT.HPER=0xFF; // Count down from 255 on WO3/WO4/WO5
-  TCA0.SPLIT.CTRLA=TCA_SPLIT_CLKSEL_DIV4_gc|TCA_SPLIT_ENABLE_bm; //enable the timer with prescaler of 4
+  pinMode(PWMPin, OUTPUT);  //PB0 - TCA0 WO0, pin9 on 14-pin parts
+  //See http://ww1.microchip.com/downloads/en/Appnotes/TB3217-Getting-Started-with-TCA-DS90003217.pdf
+  TCA0.SINGLE.CTRLB = ( TCA_SINGLE_CMP2EN_bm  | TCA_SINGLE_WGMODE_SINGLESLOPE_gc ); //Single PWM on WO0 singleslope
+  TCA0.SINGLE.PER   = 0xFF; // Count down from 255 on WO0/WO1/WO2
+  TCA0.SINGLE.CTRLA = ( TCA_SINGLE_CLKSEL_DIV4_gc | TCA_SINGLE_ENABLE_bm ); //enable the timer with prescaler of 4
   pinMode(fanSense, INPUT);
   pinMode(extPwrSense, INPUT);  
 
@@ -156,7 +166,7 @@ void loop() {
   //Clamp and rescale potentiometer input from a 10bit value to 8 bit
   if (maxPWM > 0) {
     rawADC = analogRead(analogPot);
-    fanPWM = map( rawADC, minPot, maxPot, maxPWM, minPWM ); //Inverts the knob scale, 10 bits to 8 bits
+    fanPWM = map( rawADC, minPot, maxPot, minPWM, maxPWM ); //scale knob, 10 bits to 8 bits (v0.3 change)
   } 
   else {
     fanPWM = maxPWM;
