@@ -15,6 +15,7 @@
                flash: 4286/16384 bytes (26%) RAM: 189/1024 (18%) with debug enabled 
  */
 
+
 // MegaTinyCore 2.2.9 (do not use v2.3.0 or 2.3.1)
 //  Board: ATtiny 1614/...
 //  Chip: ATtiny1614
@@ -36,6 +37,7 @@
 #ifndef MILLIS_USE_TIMERB0
 #error "This sketch is written for use with TCB0 as the millis timing source"
 #endif
+
 
 // Pin connections per PAPR V0.3 PCB and newer
 // PA0 - UPDI/RESET
