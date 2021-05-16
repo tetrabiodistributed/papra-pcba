@@ -271,6 +271,28 @@
 <wire x1="-3.302" y1="3.556" x2="-3.048" y2="3.556" width="0.127" layer="21"/>
 <wire x1="9.398" y1="3.556" x2="9.652" y2="3.556" width="0.127" layer="21"/>
 </package>
+<package name="TE-BNC">
+<wire x1="-14.4" y1="7.35" x2="0" y2="7.35" width="0.2032" layer="21"/>
+<wire x1="0" y1="7.35" x2="0" y2="6.25" width="0.2032" layer="21"/>
+<wire x1="0" y1="6.25" x2="0" y2="-6.25" width="0.2032" layer="21"/>
+<wire x1="0" y1="-6.25" x2="0" y2="-7.35" width="0.2032" layer="21"/>
+<wire x1="0" y1="-7.35" x2="-14.4" y2="-7.35" width="0.2032" layer="21"/>
+<wire x1="-14.4" y1="-7.35" x2="-14.4" y2="7.35" width="0.2032" layer="21"/>
+<wire x1="9.1" y1="4.8" x2="21.1" y2="4.8" width="0.2032" layer="21"/>
+<wire x1="21.1" y1="4.8" x2="21.1" y2="-4.9" width="0.2032" layer="21"/>
+<wire x1="21.1" y1="-4.9" x2="9.1" y2="-4.8" width="0.2032" layer="21"/>
+<wire x1="0" y1="6.25" x2="9.1" y2="6.25" width="0.2032" layer="21"/>
+<wire x1="9.1" y1="6.25" x2="9.1" y2="4.8" width="0.2032" layer="21"/>
+<wire x1="9.1" y1="4.8" x2="9.1" y2="-4.8" width="0.2032" layer="21"/>
+<wire x1="9.1" y1="-4.8" x2="9.1" y2="-6.25" width="0.2032" layer="21"/>
+<wire x1="9.1" y1="-6.25" x2="0" y2="-6.25" width="0.2032" layer="21"/>
+<pad name="SHIELD" x="-12.38" y="2.54" drill="0.89"/>
+<pad name="SIGNAL" x="-12.38" y="0" drill="0.89"/>
+<text x="-13.8112" y="7.759" size="1.27" layer="25">&gt;NAME</text>
+<text x="-13.8112" y="-9.537" size="1.27" layer="27">&gt;VALUE</text>
+<pad name="P$1" x="-7.3" y="5.08" drill="2.1"/>
+<pad name="P$2" x="-7.3" y="-5.08" drill="2.1"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="SOIC127P600X144-14" urn="urn:adsk.eagle:package:9256958/2" type="model">
@@ -363,6 +385,17 @@
 <symbol name="4LEDARRAY">
 <text x="-2.54" y="0" size="1.27" layer="95">&gt;NAME</text>
 <text x="-2.54" y="-2.54" size="1.27" layer="96">&gt;VALUE</text>
+</symbol>
+<symbol name="BNC">
+<pin name="P1" x="5.08" y="0" visible="pad" length="middle" direction="pas" rot="R180"/>
+<text x="-2.54" y="-7.62" size="1.27" layer="95" font="vector" ratio="13">&gt;NAME</text>
+<pin name="P2" x="5.08" y="-5.08" visible="pad" length="middle" direction="pas" rot="R180"/>
+<wire x1="0" y1="-2.54" x2="0" y2="2.54" width="0.254" layer="94" curve="-180"/>
+<circle x="0" y="0" radius="0.635" width="0.254" layer="94"/>
+<text x="2.54" y="2.54" size="1.27" layer="96" font="vector" ratio="13">&gt;VALUE</text>
+<wire x1="0" y1="-5.08" x2="-2.54" y2="-5.08" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="-5.08" x2="-2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="-1.778" y2="-1.778" width="0.1524" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -457,6 +490,23 @@
 </gates>
 <devices>
 <device name="" package="DIALIGHT_5151020F_/LEDS">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="TE-BNC">
+<description>https://www.te.com/usa-en/product-1-1478032-0.html</description>
+<gates>
+<gate name="G$1" symbol="BNC" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TE-BNC">
+<connects>
+<connect gate="G$1" pin="P1" pad="SIGNAL"/>
+<connect gate="G$1" pin="P2" pad="SHIELD"/>
+</connects>
 <technologies>
 <technology name=""/>
 </technologies>
@@ -20903,7 +20953,6 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="GND5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="POT1" library="PC-LIB" deviceset="P091S-FC20BR" device=""/>
 <part name="GND6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="H4" library="PC-LIB" deviceset="PJ-066A" device="" value="M-CUI-PJ-066A"/>
 <part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10K 0805W8F1002T5E (C17414)"/>
 <part name="U1" library="v-reg" library_urn="urn:adsk.eagle:library:409" deviceset="TS5205" device="" package3d_urn="urn:adsk.eagle:package:30378/1" technology="33" value="LP2985-50DBVR  (C74511)"/>
 <part name="R8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="47R 0805W8F470JT5E (C17714)"/>
@@ -20939,6 +20988,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="10K 0805W8F1002T5E (C17414)"/>
 <part name="C4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="CPOL-US" device="A/3216-18R" package3d_urn="urn:adsk.eagle:package:23410/2" value="10uF TAJA106K016RNJ (C7171)"/>
 <part name="F1" library="SparkFun-Fuses" library_urn="urn:adsk.eagle:library:517" deviceset="PPTC" device="_HALF-AMP" package3d_urn="urn:adsk.eagle:package:38575/1" value="13.2V 1.8A (C70081)"/>
+<part name="H2" library="PC-LIB" deviceset="TE-BNC" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -20983,7 +21033,9 @@ v.3
 - Moved FAN-PWM to WO0 (was WO3)
 - Flipped Potentiometer 5V &amp; GND
 
-</text>
+v.4 
+- Added BNC for connection to fan
+- Removed DC Jack to fan</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes"/>
@@ -21003,8 +21055,8 @@ v.3
 <attribute name="NAME" x="226.4156" y="169.1386" size="2.0828" layer="95" ratio="6" rot="SR0"/>
 <attribute name="VALUE" x="225.7806" y="166.5986" size="2.0828" layer="96" ratio="6" rot="SR0"/>
 </instance>
-<instance part="GND2" gate="1" x="208.28" y="149.86" smashed="yes">
-<attribute name="VALUE" x="205.74" y="147.32" size="1.778" layer="96"/>
+<instance part="GND2" gate="1" x="208.28" y="139.7" smashed="yes">
+<attribute name="VALUE" x="205.74" y="137.16" size="1.778" layer="96"/>
 </instance>
 <instance part="P+2" gate="1" x="205.74" y="124.46" smashed="yes">
 <attribute name="VALUE" x="203.2" y="119.38" size="1.778" layer="96" rot="R90"/>
@@ -21051,9 +21103,6 @@ v.3
 </instance>
 <instance part="GND6" gate="1" x="132.08" y="116.84" smashed="yes">
 <attribute name="VALUE" x="129.54" y="114.3" size="1.778" layer="96"/>
-</instance>
-<instance part="H4" gate="G$1" x="91.44" y="104.14" smashed="yes" rot="MR0">
-<attribute name="NAME" x="96.52" y="109.22" size="1.27" layer="95" rot="MR0"/>
 </instance>
 <instance part="R9" gate="G$1" x="27.94" y="83.82" smashed="yes" rot="R90">
 <attribute name="NAME" x="26.4414" y="80.01" size="1.778" layer="95" rot="R90"/>
@@ -21179,6 +21228,10 @@ v.3
 <attribute name="NAME" x="205.105" y="187.325" size="1.778" layer="95" font="vector" rot="R90" align="bottom-center"/>
 <attribute name="VALUE" x="198.374" y="184.15" size="1.778" layer="96" font="vector" rot="R90" align="top-center"/>
 </instance>
+<instance part="H2" gate="G$1" x="93.98" y="127" smashed="yes" rot="MR0">
+<attribute name="NAME" x="96.52" y="119.38" size="1.27" layer="95" font="vector" ratio="13" rot="MR0"/>
+<attribute name="VALUE" x="91.44" y="129.54" size="1.27" layer="96" font="vector" ratio="13" rot="MR0"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -21239,7 +21292,7 @@ v.3
 <pinref part="H1" gate="G$1" pin="RING"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="187.96" y1="157.48" x2="208.28" y2="157.48" width="0.1524" layer="91"/>
-<wire x1="208.28" y1="157.48" x2="208.28" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="208.28" y1="157.48" x2="208.28" y2="142.24" width="0.1524" layer="91"/>
 <label x="190.5" y="157.48" size="1.778" layer="95"/>
 </segment>
 <segment>
@@ -21338,13 +21391,17 @@ v.3
 <pinref part="P+3" gate="1" pin="+12V"/>
 <wire x1="50.8" y1="121.92" x2="50.8" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="116.84" x2="50.8" y2="106.68" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="106.68" x2="50.8" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="106.68" x2="63.5" y2="106.68" width="0.1524" layer="91"/>
 <label x="73.66" y="106.68" size="1.778" layer="95"/>
-<pinref part="H4" gate="G$1" pin="TIP"/>
 <pinref part="D1" gate="G$1" pin="C"/>
+<wire x1="63.5" y1="106.68" x2="50.8" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="114.3" x2="43.18" y2="116.84" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="116.84" x2="50.8" y2="116.84" width="0.1524" layer="91"/>
 <junction x="50.8" y="116.84"/>
+<pinref part="H2" gate="G$1" pin="P1"/>
+<wire x1="88.9" y1="127" x2="63.5" y2="127" width="0.1524" layer="91"/>
+<wire x1="63.5" y1="127" x2="63.5" y2="106.68" width="0.1524" layer="91"/>
+<junction x="63.5" y="106.68"/>
 </segment>
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
@@ -21379,15 +21436,19 @@ v.3
 </net>
 <net name="FAN-GND" class="1">
 <segment>
-<wire x1="88.9" y1="101.6" x2="50.8" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="88.9" y1="101.6" x2="71.12" y2="101.6" width="0.1524" layer="91"/>
 <label x="73.66" y="101.6" size="1.778" layer="95"/>
-<pinref part="H4" gate="G$1" pin="RING"/>
 <pinref part="D1" gate="G$1" pin="A"/>
+<wire x1="71.12" y1="101.6" x2="50.8" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="104.14" x2="43.18" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="101.6" x2="50.8" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="Q1" gate="G$1" pin="D"/>
 <wire x1="50.8" y1="101.6" x2="50.8" y2="99.06" width="0.1524" layer="91"/>
 <junction x="50.8" y="101.6"/>
+<pinref part="H2" gate="G$1" pin="P2"/>
+<wire x1="88.9" y1="121.92" x2="71.12" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="121.92" x2="71.12" y2="101.6" width="0.1524" layer="91"/>
+<junction x="71.12" y="101.6"/>
 </segment>
 </net>
 <net name="FAN-PWM" class="0">
@@ -21615,11 +21676,6 @@ v.3
 </net>
 <net name="FAN-SENSE" class="0">
 <segment>
-<pinref part="H4" gate="G$1" pin="RING_SW"/>
-<wire x1="88.9" y1="104.14" x2="66.04" y2="104.14" width="0.1524" layer="91"/>
-<label x="73.66" y="104.14" size="1.778" layer="95"/>
-</segment>
-<segment>
 <wire x1="78.74" y1="182.88" x2="111.76" y2="182.88" width="0.1524" layer="91"/>
 <label x="81.28" y="182.88" size="1.778" layer="95"/>
 <pinref part="U2" gate="G$1" pin="PA3/EXTCLK/AIN3/XCK(ALT)/SCK/WO3"/>
@@ -21648,13 +21704,14 @@ v.3
 <approved hash="202,1,254,111.76,U1,CB,,,,"/>
 <approved hash="104,1,20.32,193.04,U2,VCC,+5V,,,"/>
 <approved hash="105,1,57.15,134.62,BORDERLINES,,,,,"/>
+<approved hash="106,1,78.74,182.88,FAN-SENSE,,,,,"/>
+<approved hash="108,1,109.22,66.04,BORDERLINES,,,,,"/>
+<approved hash="108,1,185.42,88.9,BORDERLINES,,,,,"/>
 <approved hash="108,1,109.22,134.62,BORDERLINES,,,,,"/>
+<approved hash="108,1,157.48,134.62,BORDERLINES,,,,,"/>
+<approved hash="108,1,154.94,66.04,BORDERLINES,,,,,"/>
 <approved hash="108,1,185.42,134.62,BORDERLINES,,,,,"/>
 <approved hash="108,1,88.9,66.04,BORDERLINES,,,,,"/>
-<approved hash="108,1,154.94,66.04,BORDERLINES,,,,,"/>
-<approved hash="108,1,185.42,88.9,BORDERLINES,,,,,"/>
-<approved hash="108,1,109.22,66.04,BORDERLINES,,,,,"/>
-<approved hash="108,1,157.48,134.62,BORDERLINES,,,,,"/>
 </errors>
 </schematic>
 </drawing>

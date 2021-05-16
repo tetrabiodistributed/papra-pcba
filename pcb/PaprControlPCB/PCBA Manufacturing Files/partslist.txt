@@ -1,0 +1,36 @@
+Partlist
+
+Part     Value                          Package            Library        Position (mm)         Orientation
+
+BATT+    TE63952-1                      TE63952-1          PC-LIB         (-6.6 17.96)          MR90
+BATT-    TE63952-1                      TE63952-1          PC-LIB         (6.6 17.96)           MR90
+C1       1uF CL21B105KBFNNNE (C28323)   C0805              rcl            (0.5 5.9)             R180
+C2       .1uF CL21B104KBFNNNE (C49678 ) C0805              rcl            (2.2 2.9)             R0
+C3       1uF CL21B105KBFNNNE (C28323)   C0805              rcl            (-3.7 3.1)            R180
+C4       10uF TAJA106K016RNJ (C7171)    A/3216-18R         rcl            (12.4 -4.9)           R270
+D1       SS34 (C8678)                   DIOM5226X290N      Diode          (10 -3.2)             R90
+F1       13.2V 1.8A (C70081)            1206               SparkFun-Fuses (3.7 6.5)             R270
+H1       M-CUI-PJ-066A                  DCJACK-PJ-066A     PC-LIB         (0 23.5)              R180
+H2       TE-BNC                         TE-BNC             PC-LIB         (9.5 -23.3)           R270
+H3       1X4-BIG                        1X04-BIG           adafruit       (12.5 12.1)           R90
+LED1     NCD0805R1 (C84256)             CHIPLED_0805       led            (-9.7 11.3)           R270
+LED2     NCD0805R1 (C84256)             CHIPLED_0805       led            (-9.7 5)              R270
+LED3     NCD0805R1 (C84256)             CHIPLED_0805       led            (-9.7 -1.4)           R270
+LED4     NCD0805R1 (C84256)             CHIPLED_0805       led            (-9.7 -7.7)           R270
+LED5     NCD0805R1 (C84256)             CHIPLED_0805       led            (-1.9 -20.7)          R90
+POT1     P091S-FC20BR                   P091S-FC20BR       PC-LIB         (-10 -23.3)           R270
+Q1       AO3400A (C20917)               SOT23              Transistor     (11.5 2.8)            R90
+R1       10K 0805W8F1002T5E (C17414)    R0805              rcl            (6 11.6)              R270
+R2       18K 0805W8F1802T5E (C17506)    R0805              rcl            (8.2 11.6)            R90
+R3       4.7K 0805W8F4701T5E (C17673)   R0805              rcl            (6.3 7.5)             R90
+R4       330 0805W8F3300T5E (C17630)    R0805              rcl            (-5.6 0.5)            R0
+R5       330 0805W8F3300T5E (C17630)    R0805              rcl            (-5.6 -1.8)           R0
+R6       330 0805W8F3300T5E (C17630)    R0805              rcl            (-5.6 -4.1)           R0
+R7       330 0805W8F3300T5E (C17630)    R0805              rcl            (-5.6 -6.5)           R0
+R8       47R 0805W8F470JT5E (C17714)    R0805              rcl            (12.3 7.9)            R180
+R9       10K 0805W8F1002T5E (C17414)    R0805              rcl            (11.9 5.7)            R180
+R10      1K2 0805W8F1201T5E (C17379)    R0805              rcl            (-1.8 -18.2)          R0
+R11      10K 0805W8F1002T5E (C17414)    R0805              rcl            (-1.7 -15.1)          R180
+U1       LP2985-50DBVR  (C74511)        SOT25              v-reg          (-3.7 5.8)            R90
+U2       ATTINYX04SOIC14                SOIC127P600X144-14 PC-LIB         (1.9 -3.1)            R0
+UPDI     NP                             1X03               adafruit       (-12.2 17.5)          R90
