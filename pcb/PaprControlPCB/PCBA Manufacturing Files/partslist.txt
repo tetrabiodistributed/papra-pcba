@@ -1,11 +1,5 @@
 Partlist
 
-Exported from Papra v0.5.sch at 5/22/2021 12:03 PM
-
-EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
-
-Assembly variant: 
-
 Part     Value                          Device                   Package            Library        Sheet
 
 BATT+    TE63952-1                      TE63952-1                TE63952-1          PC-LIB         1
