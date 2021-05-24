@@ -1,5 +1,7 @@
 # PAPRA-PCB
 
+Firmware found here: https://github.com/tetrabiodistributed/papra-pcb-firmware/tree/main/papracode
+
 Notes for programming:
 * Make a UPDI Programmer: https://create.arduino.cc/projecthub/john-bradnam/create-your-own-updi-programmer-1e55f1?ref=user&ref_id=466812&offset=6
 * The board features a UPDI header on the top left of the PCB (top being the side with the battery connectors) the pins are top to bottom 5V, GND and data. 
