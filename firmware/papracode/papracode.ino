@@ -2,33 +2,26 @@
   papracode
     - Reads battery voltage and lights up LEDs to mimic M12 battery fuel gauge
     - Reads user pot to control PWM of fan
-  to do
-    - look at averaging battery voltage
-    - set a MIN PWM value for fan output, vary with battery level
-  PCB is compatible with the following 14SOIC ATtiny chips: 404/804/1604 and 414/814/1614 should work (needs testing)
-  Attiny204 - not supported, perhaps could work with code minimization
-  AtTiny404
-    current code flash: 2126/4096 bytes (51%) RAM: 24/256 ( 9%) bytes without debug enabled
-                 flash: 3902/4096 bytes (95%) RAM: 87/256 (33%) with debug enabled 
-  AtTiny1604
-  current code flash: ____/16384 bytes (__%) RAM:  30/1024 (2%) bytes without debug enabled
-               flash: 4286/16384 bytes (26%) RAM: 189/1024 (18%) with debug enabled 
- */
 
-
-// MegaTinyCore 2.2.9 (do not use v2.3.0 or 2.3.1)
-//  Board: ATtiny 1614/...
-//  Chip: ATtiny1614
-//  Clock: 20MHz
-//  millis()/micros() TCB0
-//  Voltage for UART: Closer to 5V
-//  Support SeriaEvent: no
-//  Startup Time: 8mS
-//  BOD level: 4.2V
-//  BOD Mode: Disabled/Disabled
-//  Save EEPROM: EEPROM retained
-
-//#define DEBUG_SERIAL   //uncomment line to enable serial debug
+  PCB is compatible with all 0/1/2-Series 14 pin ATtiny chips
+  For chips with 2K flash (ATtiny204 & ATtiny404), the Preprocessor directive must be uncommented
+*/
+//#define TWOKFLASHCHIP //uncomment line when programming ATtiny204 or ATtiny214
+  
+// Compile with Arduino 1.8.13 or later.
+// Install MegaTinyCore via the Boards Manager
+// MegaTinyCore 2.3.2
+// Note:bootloader not used, so many options below will not be relevent
+//  Board: ATtiny 3224/1624/1614/1604/814/804/424/414/404/214/204
+//  Chip or Board: Select your chip
+//  Clock: 20MHz internal
+//  millis()/micros() TCB0 (breaks tone() and Servo)
+//  Startup Time: 8ms
+//  BOD Voltage level: Any, BOD not used without bootloader
+//  BOD Mode when Active/Sleeping: Any, BOD not used without bootloader
+//  Save EEPROM: Any, not used without bootloader
+//  UPDI/Reset Pin Function: Any, not used without bootloader 
+//  Voltage Baud Correction: Closer to 5V
 
 #ifdef MILLIS_USE_TIMERA0
 #error "This sketch takes over TCA0 - please use a different timer for millis"
@@ -38,30 +31,29 @@
 #error "This sketch is written for use with TCB0 as the millis timing source"
 #endif
 
-
-// Pin connections per PAPR V0.3 PCB and newer
+// Pin connections per PAPR V0.5 PCB
 // PA0 - UPDI/RESET
 // PA1 - ADC - BATTERY
 // PA2 - ADC = POTENTIOMETER
-// PA3 - FAN CONNECTION SENSE
-// PA4 - EXT PWR SENSE 
+// PA3 - UNUSED
+// PA4 - LED4 
 // PA5 - LED1
 // PA6 - LED2
 // PA7 - LED3
 // PB0 - PWM - FAN (uses Timer TCA0)
-// PB1 - LED4
+// PB1 - BUZZER
 // PB2 - UART TX
 // PB3 - UART RX
 
 int analogBatt  = PIN_A1;  // AIN1 - 10 bit resolution on ADC 
 int analogPot   = PIN_A2;  // AIN2 - Fan speed control POT with on/off switch
-int fanSense    = PIN_PA3;  //(v0.3 change)
-int extPwrSense = PIN_PA4;
+//int UNUSED    = PIN_PA3; //v0.5 change
+int led4        = PIN_PA4; //v0.5 change
 int led1        = PIN_PA5;
 int led2        = PIN_PA6;
 int led3        = PIN_PA7;
 int PWMPin      = PIN_PB0; // W00 8 bit resolution with Arduino AnalogWrite (v0.3 change)
-int led4        = PIN_PB1;
+int buzzerPin   = PIN_PB1; //v0.5 change
 
 // Battery Voltage to Fuel Gauge
 // > 4.12V/Cell = 100% - 78% Battery  = 4 LEDs         => 899 > adc > 864
@@ -122,28 +114,28 @@ void setup() {
   pinMode(led2, OUTPUT);
   pinMode(led3, OUTPUT);
   pinMode(led4, OUTPUT);
+  pinMode(buzzerPin, OUTPUT);
   pinMode(PWMPin, OUTPUT);  //PB0 - TCA0 WO0, pin9 on 14-pin parts
   //See http://ww1.microchip.com/downloads/en/Appnotes/TB3217-Getting-Started-with-TCA-DS90003217.pdf
   TCA0.SINGLE.CTRLB = ( TCA_SINGLE_CMP2EN_bm  | TCA_SINGLE_WGMODE_SINGLESLOPE_gc ); //Single PWM on WO0 singleslope
   TCA0.SINGLE.PER   = 0xFF; // Count down from 255 on WO0/WO1/WO2
   TCA0.SINGLE.CTRLA = ( TCA_SINGLE_CLKSEL_DIV4_gc | TCA_SINGLE_ENABLE_bm ); //enable the timer with prescaler of 4
-  pinMode(fanSense, INPUT);
-  pinMode(extPwrSense, INPUT);  
 
   digitalWrite(led1, HIGH);
   digitalWrite(led2, HIGH);
   digitalWrite(led3, HIGH);
   digitalWrite(led4, HIGH);
+  digitalWrite(buzzerPin,LOW);
   digitalWrite(PWMPin, maxPWM); //Turn on fan 100%
-#ifdef DEBUG_SERIAL
+#ifdef TWOKFLASHCHIP
+  delay(1000);
+#else 
   Serial.begin(115200);
   Serial.println("Starting up");
-  Serial.println("PAPRA 31JAN2021");
-  Serial.println("PCB v0.2");
-  Serial.println("AtTiny 1604");
-  Serial.println("(c) Tetra Bio Distributed 2021");
-#endif
-  
+  Serial.println("PAPRA 15MAY2021");
+  Serial.println("PCB v0.5");
+  Serial.println("AtTiny 0/1/2-Series 14 pin");
+  Serial.println("Tetra Bio Distributed 2021");
   for (int i = 0; i <= 4; i++) { //startup knightrider 
     digitalWrite(led1, LOW);  delay(onTime);
     digitalWrite(led1, HIGH); 
@@ -160,6 +152,7 @@ void setup() {
     digitalWrite(led1, LOW);  delay(onTime);
     digitalWrite(led1, HIGH); delay(offTime);
   }
+#endif
 }
 
 // the loop routine runs over and over again forever:
@@ -223,6 +216,7 @@ void loop() {
         digitalWrite(led3, HIGH);
         digitalWrite(led4, HIGH);
         digitalWrite(led1, LOW);
+        digitalWrite(buzzerPin, HIGH);
         minPWM = minPWM10p;
       }
       break;
@@ -244,9 +238,9 @@ void loop() {
       blinkCounter = 0;
     }
   }  
-#ifdef DEBUG_SERIAL
-  Serial.print("fs = ");             Serial.print( digitalRead( fanSense ) );
-  Serial.print(" eps = ");           Serial.print( digitalRead( extPwrSense ) );
+#ifdef TWOKFLASHCHIP
+
+#else
   Serial.print(" Battery = ");       Serial.print(battery);
   Serial.print(" rawADC = ");        Serial.print(rawADC);
   Serial.print(" pwm = ");           Serial.print(fanPWM);

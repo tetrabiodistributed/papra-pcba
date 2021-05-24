@@ -1,0 +1,3 @@
+[submodule "papra-pcb-firmware"]
+	path = papra-pcb-firmware
+	url = https://github.com/tetrabiodistributed/papra-pcb-firmware
