@@ -24,4 +24,4 @@ Please note that there are a number of ATTiny SKUs that are compatible with this
 | ATtiny1614SSN_,| Yes         |    	                           |
 | ATtiny1624SSU, | Yes         |    	                           |
 
-(1)ATtiny 204 and 214 have 2K flash memory for program space. The preprocessor for TWOKFLASHCHIP must be uncommented prior to compiling. See Line 9. 
+(1)ATtiny 204 and 214 have limited (2K) flash memory for program space, but the firmware can be made to fit by sacraficing the bootup LED sequence.
