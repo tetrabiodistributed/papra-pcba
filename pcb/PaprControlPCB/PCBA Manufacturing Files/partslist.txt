@@ -1,6 +1,6 @@
 Partlist
 
-Exported from Papra v0.6.sch at 7/27/2021 6:47 AM
+Exported from Papra v0.6.sch at 7/27/2021 6:47 AM, UPDATED 7/28/2021 10:02 AM
 
 EAGLE Version 9.6.2 Copyright (c) 1988-2020 Autodesk, Inc.
 
@@ -44,7 +44,7 @@ R11      10K 0805W8F1002T5E (C17414)    R-US_R0805               R0805          
 R12      10K 0805W8F1002T5E (C17414)    R-US_R0805               R0805                 rcl        1
 R13      120 0805W8F1200T5E (C17437)    R-US_R0805               R0805                 rcl        1
 R14      470K                           R-US_R0805               R0805                 rcl        1
-R15      82K                            R-US_R0805               R0805                 rcl        1
+R15      75K                            R-US_R0805               R0805                 rcl        1
 R16      390K                           R-US_R0805               R0805                 rcl        1
 R17      1K                             R-US_R0805               R0805                 rcl        1
 R18      360K                           R-US_R0805               R0805                 rcl        1

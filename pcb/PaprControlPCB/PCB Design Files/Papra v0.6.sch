@@ -22071,7 +22071,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="SG1" library="buzzer" library_urn="urn:adsk.eagle:library:113" deviceset="F/TMB" device="" package3d_urn="urn:adsk.eagle:package:5260/1" value="YS-MBZ12095DYB12 C409840"/>
 <part name="U9" library="TI e-Fuse" deviceset="TPS259472ARPWR" device="" package3d_urn="urn:adsk.eagle:package:30039395/1"/>
 <part name="R14" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="470K"/>
-<part name="R15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="82K"/>
+<part name="R15" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="75K"/>
 <part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="390K"/>
 <part name="R17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1K"/>
@@ -22152,13 +22152,12 @@ v.5
 
 v0.6
 - Replaced reverse polarity diode and fuses with E-FUSE circuit
-- Connected PowerGood to ATtiny
+- Connected PowerGood &amp; ILM to ATtiny
 - Added 0.1uF to ATtiny
 - Removed expansion header
 - Connected TXD to touchpad for debug
-- Connected ATtiny to PG
 - Moved ADC-BAT to pin 13
-- Renumbered LED1-4 on ATtiny
+- Renumbered LED1-4 on ATtiny for easy routing
 </text>
 <text x="93.98" y="111.76" size="1.778" layer="91">BUZZER</text>
 <text x="106.68" y="139.7" size="1.778" layer="91" align="top-left">maximum input voltage
@@ -22175,7 +22174,8 @@ Fan Fet - 5.7A
 <text x="71.12" y="106.68" size="1.778" layer="91">DigiKey Buzzer Option
 https://www.digikey.com/en/products/detail/cui-devices/CMI-1210-92T/13245502</text>
 <text x="218.44" y="111.76" size="1.778" layer="91">DC POWER INPUTS</text>
-<text x="200.66" y="170.18" size="3.81" layer="91">R &amp; C values TBD</text>
+<text x="205.74" y="165.1" size="3.81" layer="91">R &amp; C values
+to be tested</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes"/>
@@ -23071,14 +23071,14 @@ https://www.digikey.com/en/products/detail/cui-devices/CMI-1210-92T/13245502</te
 <approved hash="104,1,248.92,198.12,U9,OUT,+12V,,,"/>
 <approved hash="105,1,36.83,116.84,BORDERLINES,,,,,"/>
 <approved hash="106,1,53.34,91.44,PINS,,,,,"/>
-<approved hash="108,1,68.58,50.8,BORDERLINES,,,,,"/>
-<approved hash="108,1,88.9,50.8,BORDERLINES,,,,,"/>
 <approved hash="108,1,127,50.8,BORDERLINES,,,,,"/>
-<approved hash="108,1,68.58,116.84,BORDERLINES,,,,,"/>
-<approved hash="108,1,127,116.84,BORDERLINES,,,,,"/>
-<approved hash="108,1,157.48,116.84,BORDERLINES,,,,,"/>
 <approved hash="108,1,185.42,116.84,BORDERLINES,,,,,"/>
+<approved hash="108,1,127,116.84,BORDERLINES,,,,,"/>
 <approved hash="108,1,185.42,50.8,BORDERLINES,,,,,"/>
+<approved hash="108,1,88.9,50.8,BORDERLINES,,,,,"/>
+<approved hash="108,1,68.58,50.8,BORDERLINES,,,,,"/>
+<approved hash="108,1,68.58,116.84,BORDERLINES,,,,,"/>
+<approved hash="108,1,157.48,116.84,BORDERLINES,,,,,"/>
 <approved hash="109,1,157.48,154.94,BORDERLINES,,,,,"/>
 <approved hash="115,1,81.28,154.94,BORDERLINES,,,,,"/>
 <approved hash="115,1,36.83,116.84,BORDERLINES,,,,,"/>
