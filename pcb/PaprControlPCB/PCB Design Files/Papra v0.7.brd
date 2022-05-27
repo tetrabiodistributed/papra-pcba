@@ -55,7 +55,7 @@
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="3" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
@@ -157,7 +157,7 @@
 <layer number="255" name="routoute" color="7" fill="1" visible="no" active="yes"/>
 </layers>
 <board>
-<fusionsync huburn="a.YnVzaW5lc3M6Z21haWw5OTQ5MjA" projecturn="a.YnVzaW5lc3M6Z21haWw5OTQ5MjAjMjAyMDExMDYzNTA1MTIwMjY" f3durn="urn:adsk.wipprod:dm.lineage:JEFVqw5vTH6odYGCi8RVlw" pcbguid="aa0c62d1-2540-45f0-a182-071342106a7e" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="3c2acccb-d774-4313-8152-b1a00a298b9b" lastsyncedrevisionid="3c2acccb-d774-4313-8152-b1a00a298b9b" lastboardhashguid="467bbb60-425b-4ef1-c71a-8e773accd951" lastpushedtime="2022-01-10T16:57:53Z" linktopcb3d="true"/>
+<fusionsync huburn="a.YnVzaW5lc3M6Z21haWw5OTQ5MjA" projecturn="a.YnVzaW5lc3M6Z21haWw5OTQ5MjAjMjAyMDExMDYzNTA1MTIwMjY" f3durn="urn:adsk.wipprod:dm.lineage:JEFVqw5vTH6odYGCi8RVlw" pcbguid="" lastpulledtime="" lastsyncedchangeguid="" latestrevisionid="3c2acccb-d774-4313-8152-b1a00a298b9b" lastsyncedrevisionid="3c2acccb-d774-4313-8152-b1a00a298b9b" lastboardhashguid="467bbb60-425b-4ef1-c71a-8e773accd951" lastpushedtime="2022-01-10T16:57:53Z" linktopcb3d="true"/>
 <plain>
 <wire x1="-13.5" y1="-22.5" x2="22.5" y2="-22.5" width="0.001" layer="20"/>
 <wire x1="22.5" y1="-22.5" x2="24" y2="-21" width="0.001" layer="20" curve="90"/>
@@ -184,7 +184,7 @@
 <text x="4.699" y="20.701" size="1.143" layer="22" font="vector" ratio="11" rot="MR0">05JAN2022</text>
 <text x="-8.001" y="16.383" size="1.016" layer="25" font="vector" ratio="12">+</text>
 <text x="5.08" y="16.383" size="1.016" layer="25" font="vector" ratio="12">-</text>
-<text x="21.534" y="23.332" size="1.778" layer="48" align="top-left">v.2 changelog
+<text x="25.979" y="27.523" size="1.778" layer="48" align="top-left">v.2 changelog
 
 - BATTERY Tabs swapped (polarity, same position)
 - SMT Components Moved, won't affect mechanical
@@ -206,7 +206,11 @@ v.5
 - Added buzzer
 
 v.6
-- See schematic changes</text>
+- See schematic changes
+
+v.7
+- Board grew 3mm wider
+- Buzzer &amp; components adjacent moved to make room for electrolytic</text>
 <wire x1="-2.434" y1="8.213" x2="-2.434" y2="7.451" width="0.254" layer="21"/>
 <wire x1="-2.815" y1="7.832" x2="-2.053" y2="7.832" width="0.254" layer="21"/>
 <rectangle x1="7.91845" y1="-21.85035" x2="8.37565" y2="-21.83765" layer="22" rot="R180"/>
