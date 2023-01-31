@@ -28,11 +28,11 @@ PCBA Bring-Up Instructions:
 5. Measure 5V regulator (U1) is outputting 5VDC. This can be inspected with a voltmeter measuring the UDPI header as follows:
    * Pin 2 is GND
    * Pin 3 is +5V
-6. At this point, the board is powered and ready for programming via UPDI. Follow the instructions [here.](https://github.com/tetrabiodistributed/PAPRA-PCB/blob/main/README.md)
+6. At this point, the board is powered and ready for programming via UPDI. Follow the instructions [here.](https://github.com/tetrabiodistributed/PAPRA-PCB/blob/main/README.md).
 7. Upon successful completion of firmware installation, confirm the board powers up and the 4 LEDs (LED1 - LED4) light up at boot up in a sequence.
 8. For boards with the buzzer installed, confirm the buzzer chirps at bootup.
 9. In preparation for testing with a DC blower and battery, disconnect the DC jack from H1.
 10. Source a fully charged [Milwaukee M12 Red Lithium Battery 48-11-2401](https://www.milwaukeetool.com/Products/Batteries-and-Chargers/M12-Batteries-and-Chargers/48-11-2401) or similar. 
-11. Connect DC power to BNC connector (H2)
+11. Connect DC power to BNC connector (H2).
 * WARNING: If the board is not installed in the battery housing, pay careful attention to the polarity
-12. Turn on potentiometer (POT1) and adjust the fan speed from high to low, which checking the DC blower is working and speed is changing with potentiometer adjustments
+12. Turn on potentiometer (POT1) and adjust the fan speed from high to low, which checking the DC blower is working and speed is changing with potentiometer adjustments.
