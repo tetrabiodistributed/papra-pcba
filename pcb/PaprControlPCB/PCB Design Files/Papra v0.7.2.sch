@@ -22101,6 +22101,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="GND20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND21" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="+12V" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="PTR1" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2" value="PTR1B1,27"/>
+<part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+12V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -22120,8 +22121,9 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <text x="52.832" y="117.094" size="1.778" layer="91">
 ALTERNATE: AP7380-50W5-7
 </text>
-<text x="281.94" y="215.9" size="1.778" layer="97" font="vector" align="top-left">v.2 changelog
+<text x="281.94" y="215.9" size="1.778" layer="97" font="vector" align="top-left">Changelog
 
+v0.2
 - ATTINY 
   - Removed FAN-TACH
   - Added GND-SWITCH to detect battery or external power
@@ -22139,16 +22141,16 @@ ALTERNATE: AP7380-50W5-7
    - R8 FET gate resistor reduced (was 75R, is 47R)
    - 12V LED (was 1K1, is 1K2)
 
-v.3
+v0.3
 - Added 1A Resettable Fuse to 12V
 - Moved FAN-PWM to WO0 (was WO3)
 - Flipped Potentiometer 5V &amp; GND
 
-v.4 
+v0.4 
 - Added BNC for connection to fan
 - Removed DC Jack to fan
 
-v.5
+v0.5
 - Removed GROUND-SWITCH &amp; FAN-SENSE
 - Added 2nd fuse for fan 12V power
 - Added buzzer circuit, driven by PB1
@@ -22176,7 +22178,13 @@ v0.7
 - Change C7 to 10uF
 - Added C12 - 220uF AL Cap to fuse output (Panasonic F)
 - Added D2 - schottky diode to output
-- Add test points</text>
+- Add test point (+12V)
+
+v0.7.1
+- No schematic changes
+
+v0.7.2
+- No schematic changes</text>
 <text x="93.98" y="111.76" size="1.778" layer="91">BUZZER</text>
 <text x="99.06" y="152.4" size="1.778" layer="91" align="top-left">maximum input voltage
 Resistor Divider - 14V
@@ -22194,6 +22202,23 @@ https://www.digikey.com/en/products/detail/cui-devices/CMI-1210-92T/13245502</te
 <text x="218.44" y="111.76" size="1.778" layer="91">DC POWER INPUTS</text>
 <text x="180.34" y="165.1" size="3.81" layer="91">R &amp; C values
 to be tested</text>
+<wire x1="5.08" y1="154.94" x2="96.52" y2="154.94" width="0.1524" layer="97"/>
+<wire x1="96.52" y1="154.94" x2="124.46" y2="154.94" width="0.1524" layer="97"/>
+<wire x1="124.46" y1="154.94" x2="124.46" y2="208.28" width="0.1524" layer="97"/>
+<wire x1="96.52" y1="154.94" x2="96.52" y2="116.84" width="0.1524" layer="97"/>
+<wire x1="5.08" y1="116.84" x2="68.58" y2="116.84" width="0.1524" layer="97"/>
+<wire x1="68.58" y1="116.84" x2="127" y2="116.84" width="0.1524" layer="97"/>
+<wire x1="127" y1="116.84" x2="185.42" y2="116.84" width="0.1524" layer="97"/>
+<wire x1="185.42" y1="116.84" x2="274.32" y2="116.84" width="0.1524" layer="97"/>
+<wire x1="185.42" y1="35.56" x2="185.42" y2="50.8" width="0.1524" layer="97"/>
+<wire x1="185.42" y1="50.8" x2="185.42" y2="116.84" width="0.1524" layer="97"/>
+<wire x1="185.42" y1="50.8" x2="127" y2="50.8" width="0.1524" layer="97"/>
+<wire x1="127" y1="50.8" x2="88.9" y2="50.8" width="0.1524" layer="97"/>
+<wire x1="88.9" y1="50.8" x2="68.58" y2="50.8" width="0.1524" layer="97"/>
+<wire x1="68.58" y1="50.8" x2="5.08" y2="50.8" width="0.1524" layer="97"/>
+<wire x1="68.58" y1="50.8" x2="68.58" y2="116.84" width="0.1524" layer="97"/>
+<wire x1="127" y1="116.84" x2="127" y2="50.8" width="0.1524" layer="97"/>
+<wire x1="88.9" y1="0" x2="88.9" y2="50.8" width="0.1524" layer="97"/>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0" smashed="yes"/>
@@ -22490,6 +22515,9 @@ to be tested</text>
 <instance part="+12V" gate="G$1" x="256.54" y="200.66" smashed="yes" rot="R180">
 <attribute name="NAME" x="257.556" y="207.01" size="1.778" layer="95" rot="R270"/>
 <attribute name="TP_SIGNAL_NAME" x="255.27" y="203.2" size="1.778" layer="97" rot="R180"/>
+</instance>
+<instance part="P+4" gate="1" x="231.14" y="106.68" smashed="yes">
+<attribute name="VALUE" x="228.6" y="109.22" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -22863,28 +22891,6 @@ to be tested</text>
 <label x="205.74" y="83.82" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="BORDERLINES" class="0">
-<segment>
-<wire x1="5.08" y1="116.84" x2="68.58" y2="116.84" width="0.1524" layer="91" style="longdash"/>
-<wire x1="68.58" y1="116.84" x2="96.52" y2="116.84" width="0.1524" layer="91" style="longdash"/>
-<wire x1="127" y1="116.84" x2="96.52" y2="116.84" width="0.1524" layer="91" style="longdash"/>
-<wire x1="127" y1="116.84" x2="185.42" y2="116.84" width="0.1524" layer="91" style="longdash"/>
-<wire x1="185.42" y1="116.84" x2="274.32" y2="116.84" width="0.1524" layer="91" style="longdash"/>
-<wire x1="96.52" y1="154.94" x2="96.52" y2="116.84" width="0.1524" layer="91" style="longdash"/>
-<wire x1="68.58" y1="116.84" x2="68.58" y2="50.8" width="0.1524" layer="91" style="longdash"/>
-<wire x1="68.58" y1="50.8" x2="88.9" y2="50.8" width="0.1524" layer="91" style="longdash"/>
-<wire x1="68.58" y1="50.8" x2="5.08" y2="50.8" width="0.1524" layer="91" style="longdash"/>
-<wire x1="88.9" y1="50.8" x2="127" y2="50.8" width="0.1524" layer="91" style="longdash"/>
-<wire x1="127" y1="50.8" x2="185.42" y2="50.8" width="0.1524" layer="91" style="longdash"/>
-<wire x1="185.42" y1="116.84" x2="185.42" y2="50.8" width="0.1524" layer="91" style="longdash"/>
-<wire x1="88.9" y1="50.8" x2="88.9" y2="0" width="0.1524" layer="91" style="longdash"/>
-<wire x1="127" y1="116.84" x2="127" y2="50.8" width="0.1524" layer="91" style="longdash"/>
-<wire x1="185.42" y1="50.8" x2="185.42" y2="35.56" width="0.1524" layer="91" style="longdash"/>
-<wire x1="5.08" y1="154.94" x2="96.52" y2="154.94" width="0.1524" layer="91" style="longdash"/>
-<wire x1="96.52" y1="154.94" x2="124.46" y2="154.94" width="0.1524" layer="91" style="longdash"/>
-<wire x1="124.46" y1="208.28" x2="124.46" y2="154.94" width="0.1524" layer="91" style="longdash"/>
-</segment>
-</net>
 <net name="DEBUGTX" class="0">
 <segment>
 <wire x1="81.28" y1="172.72" x2="93.98" y2="172.72" width="0.1524" layer="91"/>
@@ -23147,14 +23153,14 @@ to be tested</text>
 <approved hash="104,1,223.52,198.12,U9,OUT,+12V,,,"/>
 <approved hash="105,1,36.83,116.84,BORDERLINES,,,,,"/>
 <approved hash="108,1,127,116.84,BORDERLINES,,,,,"/>
-<approved hash="108,1,68.58,116.84,BORDERLINES,,,,,"/>
-<approved hash="108,1,96.52,116.84,BORDERLINES,,,,,"/>
+<approved hash="108,1,185.42,50.8,BORDERLINES,,,,,"/>
+<approved hash="108,1,185.42,116.84,BORDERLINES,,,,,"/>
 <approved hash="108,1,88.9,50.8,BORDERLINES,,,,,"/>
 <approved hash="108,1,127,50.8,BORDERLINES,,,,,"/>
-<approved hash="108,1,185.42,116.84,BORDERLINES,,,,,"/>
+<approved hash="108,1,96.52,116.84,BORDERLINES,,,,,"/>
 <approved hash="108,1,96.52,154.94,BORDERLINES,,,,,"/>
 <approved hash="108,1,68.58,50.8,BORDERLINES,,,,,"/>
-<approved hash="108,1,185.42,50.8,BORDERLINES,,,,,"/>
+<approved hash="108,1,68.58,116.84,BORDERLINES,,,,,"/>
 </errors>
 </schematic>
 </drawing>
