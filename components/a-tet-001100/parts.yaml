@@ -1,0 +1,9 @@
+papra-pcb:
+  id: papra-pcb
+  description: PAPRa PCB
+  quantity: 1
+  quantityUnits: part
+  options:
+  - p-tet-000119
+  selectedOption: 0
+  notes: ""

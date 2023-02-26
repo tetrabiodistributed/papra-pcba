@@ -1,0 +1,10 @@
+{
+    "name": "a-tet-001113",
+    "version": "v1.0",
+    "description": "PAPRa M12 Controller Board Through Hole Assembly",
+    "author": "Patrick Campbell <patrick.campbell@tetra.org>",
+    "license": "CERN-OHL-P-2.0",
+    "dependencies": {
+    }
+}
+

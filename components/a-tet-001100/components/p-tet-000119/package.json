@@ -1,0 +1,9 @@
+{
+    "name": "p-tet-000119",
+    "version": "v0.7",
+    "description": "PAPRa M12 Controller PCB",
+    "author": "Patrick Campbell <patrick.campbell@tetra.org>",
+    "license": "CERN-OHL-P-2.0",
+    "dependencies": {
+    }
+}
