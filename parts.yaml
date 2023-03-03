@@ -7,5 +7,4 @@ papra-pcba:
   - a-tet-001100
   - a-tet-001113
   selectedOption: 1
-  notes: |
-  "replaced a-tet-001100 in favor of a-tet-001113 (through hole option)"
+  notes: "replaced a-tet-001100 in favor of a-tet-001113 (through hole option) for ease of assembly"
