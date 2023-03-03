@@ -1,5 +1,5 @@
-papra-pcb-assembly:
-  id: papra-pcb-assembly
+papra-pcba:
+  id: papra-pcba
   description: PAPRa PCB Assembly
   quantity: 1
   quantityUnits: part

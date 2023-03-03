@@ -1,4 +1,6 @@
-# PAPRA-PCB
+# papra-pcba
+
+PAPRa PCBA - printed circuit board assembly for the PAPRa M12 Controller
 
 Firmware found here: https://github.com/tetrabiodistributed/papra-pcb-firmware/tree/main/papracode
 
