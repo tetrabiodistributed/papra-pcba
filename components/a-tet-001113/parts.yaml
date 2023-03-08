@@ -1,9 +1,186 @@
 papra-pcb:
-  id: papra-pcb
-  description: PAPRa PCB
-  quantity: 1
-  quantityUnits: part
-  options:
-  - p-tet-000166
-  selectedOption: 0
-  notes: ""
+  PCB:
+    -
+      value: P-TET-000166
+      quantity: 1
+      id: papra-pcb
+      description: PAPRa PCB
+      notes: ""
+  Battery Terminals:
+    -
+      quantity: 2
+      designator: [BATT+, BATT-]
+      manufacturer: TE
+      manufacturerPartNumber: 63952-1
+      description: CONN QC TAB 0.250 SOLDER
+      notes: ""
+  Capacitors:
+    -
+      value: 330nf
+      quantity: 1
+      code: 334
+      designator: [C1]
+      description:
+      notes: ""
+    -
+      value: 100nf
+      quantity: 1
+      code: 104
+      designator: [C3]
+      description:
+      notes: ""
+  Electrolytic Capacitors:
+    -
+      value: 100uf
+      Package: 6mmx2.5mm
+      quantity: 1
+      code: 100uf
+      designator: [C2]
+      description: 
+      notes: ""
+  Diodes:
+    -
+      Package: T-1
+      quantity: 5
+      designator: [D1, D3, D4, D5, D7]
+      manufacturer: Kingbright
+      manufacturerPartNumber: WP710A10SURCK
+      description: 3MM RED LED
+      notes: ""
+    -
+      value: 1N5237B
+      Package: DO-35
+      quantity: 1
+      designator: [D2]
+      description: DIODE ZENER 8.2V 500MW DO35
+      notes: ""
+    -
+      value: 1N4004B-G
+      Package: DO-41
+      quantity: 1
+      designator: [D6]
+      description: DIODE GEN PURP 400V 1A DO41
+      notes: ""
+  Fuse Holders:
+    -
+      quantity: 1
+      designator: [F1]
+      manufacturer: Wurth
+      manufacturerPartNumber: 696108003002
+      description: FUSEHOLDER BLOCKS - PCB - CLIP C
+      notes: ""
+  Headers:
+    -
+      quantity: 1
+      designator: [H1]
+      manufacturer: CUI
+      manufacturerPartNumber: PJ-066A
+      description: CONN PWR JACK 2X5.5MM SOLDER
+      notes: ""
+    -
+      quantity: 1
+      designator: [H2]
+      manufacturer: TE/AMP
+      manufacturerPartNumber: 5227161-9
+      description: CONN BNC JACK R/A 50 OHM PCB
+      notes: ""
+  Potentiometers:
+    -
+      quantity: 1
+      manufacturer: TT Electronics/BI
+      manufacturerPartNumber: P091S-FC20BR10K
+      designator: [POT1]
+      description: POT 10K OHM 1/20W PLASTIC LINEAR
+      notes: ""
+  Transistors:
+    -
+      quantity: 1
+      manufacturer: Goford Semiconductor
+      manufacturerPartNumber: G75P04FI
+      Package: TO220-3
+      designator: [Q1]
+      description: MOSFET P-CH 40 V 60A
+      notes: ""
+    -
+      quantity: 2
+      manufacturer: TT Electronics/BI
+      manufacturerPartNumber: IPP040N06NF2SAKMA1
+      Package: TO220-3
+      designator: [Q2 Q3]
+      description: MOSFET N-CH 60 V 80A 3.3V VGS(th)
+      notes: ""
+  Regulators:
+    -
+      quantity: 1
+      manufacturer: Texas Instruments
+      manufacturerPartNumber: UA78L05ACLPME3      
+      Package: TO92-3
+      designator: [REG]
+      description: IC REG LINEAR 5V 100MA 
+      notes: ""
+  Buzzers:
+    -
+      quantity: 1
+      Package: 12mmx7.6mm
+      designator: [SG1]
+      manufacturer: CUI
+      manufacturerPartNumber: CMI-1210-92T
+      description: BUZZER MAGNETIC 12V 12MM TH
+      notes: ""
+  ICs:
+    -
+      value: QTPy/Xaio
+      quantity: 1
+      designator: [U1]
+      manufacturer: Adafruit
+      manufacturerPartNumber: 5325
+      description: STEMMA QT QT PY ESP32-S2 WIFI
+      notes: ""
+  Resistors:
+    -
+      value: 100K
+      quantity: 2
+      code: [brown, black, yellow, gold]
+      notes: ""
+      designator: [R1, R3]
+      description: 1/4W 5% 
+      notes: "In Sparkfun Kit COM-10969"
+    -
+      value: 100R
+      quantity: 4
+      code: [brown, black, yellow, gold]
+      notes: ""
+      designator: [R2, R7, R8, R9]
+      description: 1/4W 5%
+      notes: "In Sparkfun Kit COM-10969"
+    -
+      value: 10K
+      quantity: 3
+      code: [brown, black, orange, gold]
+      notes: ""
+      designator: [R2, R7, R8, R9]
+      description: 1/4W 5%
+      notes: "In Sparkfun Kit COM-10969"
+    -
+      value: 330K
+      quantity: 1
+      code: [orange, orange, yellow, gold]
+      notes: ""
+      designator: [R1, R3]
+      description: 1/4W 5%
+      notes: "In Sparkfun Kit COM-10969"
+    -
+      value: 220R
+      quantity: 2
+      code: [red, red, brown, gold]
+      notes: ""
+      designator: [R2, R7, R8, R9]
+      description: 1/4W 5%
+      notes: "In Sparkfun Kit COM-10969"
+    -
+      value: 680R
+      quantity: 1
+      code: [blue, grey, brown, gold]
+      designator: [R2, R7, R8, R9]
+      description: 1/4W 5%
+      notes: "In Sparkfun Kit COM-10969"
