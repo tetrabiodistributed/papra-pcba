@@ -36,7 +36,7 @@ papra-pcb:
       quantity: 1
       code: 100uf
       designator: [C2]
-      description: 
+      description:
       notes: ""
   Diodes:
     -
@@ -113,10 +113,10 @@ papra-pcb:
     -
       quantity: 1
       manufacturer: Texas Instruments
-      manufacturerPartNumber: UA78L05ACLPME3      
+      manufacturerPartNumber: UA78L05ACLPME3
       Package: TO92-3
       designator: [REG]
-      description: IC REG LINEAR 5V 100MA 
+      description: IC REG LINEAR 5V 100MA
       notes: ""
   Buzzers:
     -
@@ -140,47 +140,48 @@ papra-pcb:
     -
       value: 100K
       quantity: 2
-      code: [brown, black, yellow, gold]
-      notes: ""
       designator: [R1, R3]
-      description: 1/4W 5% 
-      notes: "In Sparkfun Kit COM-10969"
+      manufacturer: Yageo
+      manufacturerPartNumber: MFR-25FRF52-100K
+      description: Fixed Resistor, Metal Film, 0.25W, 100000ohm, 250V, 1% +/-Tol, 100ppm/Cel, Through Hole Mount
+      notes: ""
     -
       value: 100R
       quantity: 4
-      code: [brown, black, yellow, gold]
-      notes: ""
       designator: [R2, R7, R8, R9]
-      description: 1/4W 5%
-      notes: "In Sparkfun Kit COM-10969"
+      manufacturer: Yageo
+      manufacturerPartNumber: MFR-25FRF52-100K
+      description: Fixed Resistor, Metal Film, 0.25W, 100ohm, 250V, 1% +/-Tol, 100ppm/Cel, Through Hole Mount
+      notes: ""
     -
       value: 10K
       quantity: 3
-      code: [brown, black, orange, gold]
-      notes: ""
       designator: [R5, R11]
-      description: 1/4W 5%
-      notes: "In Sparkfun Kit COM-10969"
+      manufacturer: Yageo
+      manufacturerPartNumber: MFR-25FRF52-10K
+      description: Fixed Resistor, Metal Film, 0.25W, 10000ohm, 250V, 1% +/-Tol, 100ppm/Cel, Through Hole Mount
+      notes: ""
     -
       value: 330K
       quantity: 1
-      code: [orange, orange, yellow, gold]
-      notes: ""
       designator: [R1, R3]
-      description: 1/4W 5%
-      notes: "In Sparkfun Kit COM-10969"
+      manufacturer: Yageo
+      manufacturerPartNumber: MFR-25FRF52-330K
+      description: General Type Metal Film Resistor 330kOhm 1/4W 1% Axial T/R
+      notes: ""
     -
       value: 220R
       quantity: 2
-      code: [red, red, brown, gold]
+      designator: [R6, R12]
+      manufacturer: Yageo
+      manufacturerPartNumber: MFR-25FRF52-220R
+      description: General Type Metal Film Resistor 220Ohm 1/4W 1% Axial T/R
       notes: ""
-      designator: [R2, R7, R8, R9]
-      description: 1/4W 5%
-      notes: "In Sparkfun Kit COM-10969"
     -
       value: 680R
       quantity: 1
-      code: [blue, grey, brown, gold]
-      designator: [R2, R7, R8, R9]
-      description: 1/4W 5%
-      notes: "In Sparkfun Kit COM-10969"
+      designator: [R10]
+      manufacturer: Yageo
+      manufacturerPartNumber: MFR-25FRF52-680R
+      description: General Type Metal Film Resistor 680Ohm 1/4W 1% Axial T/R
+      notes: ""
