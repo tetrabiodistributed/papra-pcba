@@ -158,7 +158,7 @@ papra-pcb:
       quantity: 3
       code: [brown, black, orange, gold]
       notes: ""
-      designator: [R2, R7, R8, R9]
+      designator: [R5, R11]
       description: 1/4W 5%
       notes: "In Sparkfun Kit COM-10969"
     -
