@@ -1,0 +1,24 @@
+Description,Value,Designator,Footprint,DigiKey Part Number,Digikey Link,Sparkfun,Adafruit
+Battery Blade,,BATT+ BATT-,THT,A116309CT-ND,https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/63952-1/2307518,,
+0.33uF Ceramic Cap,220NF,C1,CAP-PTH-SMALL-KIT,445-173139-1-ND,https://www.digikey.com/en/products/detail/tdk-corporation/FG14X7R1H334KNT06/5802753,,
+100uF - 220uF Electrolytic Cap,100UF,C2,CPOL-RADIAL-2.5MM-6.5MM,399-6566-ND,https://www.digikey.com/en/products/detail/kemet/ESH227M016AE3AA/3082981,COM-00096,2195
+0.1uF Ceramic Cap,100NF,C3,CAP-PTH-SMALL-KIT,445-173141-1-ND,https://www.digikey.com/en/products/detail/tdk-corporation/FG14X7R2A104KNT06/5802755,COM-08375,753
+"LED, RED, 3MM",,D1 D3 D4 D5 D7,LED_3MM,754-WP710A10SURCK-ND,https://www.digikey.com/en/products/detail/kingbright/WP710A10SURCK/16602196,,
+ZENER_10V,,D2,DIODE-AXIAL,1N5240BFSCT-ND,https://www.digikey.com/en/products/detail/onsemi/1N5240BTR/977593,,
+1N4004,,D6,DO41-10,641-1999-ND,https://www.digikey.com/en/products/detail/comchip-technology/1N4004B-G/3307923,,
+Fuse Holder 5x20mm,,F1,FUSE,732-11376-ND,https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/696108003002/7244560,,
+"DC Jack, threaded",,H1,DCJACK-PJ-066A-SLOT,CP-066A-ND,https://www.digikey.com/en/products/detail/cui-devices/PJ-066A/2627225,,
+"BNC, Right Angle",,H2,TE-BNC,A32261-ND,https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/5227161-9/811159,,
+Potentiometer/Switch,,POT1,P091S-FC20BR,987-1283-ND,https://www.digikey.com/en/products/detail/tt-electronics-bi/P091S-FC20BR10K/2408860,,
+MOSFET - P CH,,Q1,TO220BV,3141-G75P04FI-ND,https://www.digikey.com/en/products/detail/goford-semiconductor/G75P04FI/17284027,COM-10349,1794
+MOSFET - N CH,,Q2 Q3,TO220BV,448-IPP040N06NF2SAKMA1-ND,https://www.digikey.com/en/products/detail/infineon-technologies/IPP040N06NF2SAKMA1/16394967,COM-10213,355
+5V Regulator,,REG,TO92,296-50712-1-ND,https://www.digikey.com/en/products/detail/texas-instruments/UA78L05ACLPME3/1910227,,
+12V Buzzer,,SG1,F/TMB,CMI-1210-92TCMI-1210-92T,https://www.digikey.com/en/products/detail/CMI-1210-92T/2223-CMI-1210-92T-ND/13245502,,
+QT Py ESP32-S3,,U2,MODULE14P-TH+PAD,1528-5325-ND,https://www.digikey.com/en/products/detail/adafruit-industries-llc/5325/15901779,,5325
+Resistor Kit,,See Below,0207/10,1568-COM-10969-ND,https://www.digikey.com/en/products/detail/sparkfun-electronics/COM-10969/14671649,COM-10969,
+,100K,R1 R3,,,,,
+,100R,R2 R7 R8 R9,,,,,
+,10K,R3 R5 R11,,,,,
+,330K,R4,,,,,
+,220R,R6 R12,,,,,
+,680R,R10,,,,,
