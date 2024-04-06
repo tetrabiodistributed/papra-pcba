@@ -1,8 +1,11 @@
-# PAPRA-PCB
+# PAPRA Printed Circuit Board Assembly (PCBA)
 
-Firmware found here: https://github.com/tetrabiodistributed/papra-pcb-firmware/tree/main/papracode
+Full documentation page for building the PAPRa can be found here: https://tetrabiodistributed.github.io/papra/
 
-Notes for programming:
+Firmware for flashing the PAPRA PCBA can be found here: https://github.com/tetrabiodistributed/papra-pcb-firmware/tree/main/papracode
+
+## Notes for programming
+
 * Make a UPDI Programmer: https://create.arduino.cc/projecthub/john-bradnam/create-your-own-updi-programmer-1e55f1?ref=user&ref_id=466812&offset=6
 * The board features a UPDI header on the top left of the PCB (top being the side with the battery connectors) the pins are top to bottom 5V, GND and data. 
 * Setup Arduino: https://www.hackster.io/john-bradnam/using-the-new-attiny-processors-with-arduino-ide-612185
