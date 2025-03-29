@@ -1,6 +1,10 @@
-# papra-pcba
+# PAPRA Printed Circuit Board Assembly (PCBA)
 
-## PAPRa PCBA - printed circuit board assembly for the PAPRa M12 Controller
+PAPRa PCBA - printed circuit board assembly for the PAPRa M12 Controller
+
+Full documentation page for building the PAPRa can be found here: https://tetrabiodistributed.github.io/papra/
+
+Firmware for flashing the PAPRA PCBA can be found here: https://github.com/tetrabiodistributed/papra-pcb-firmware/tree/main/papracode
 
 ## PAPRa PCBA comes in 2 form factors
 
@@ -24,7 +28,8 @@
 * Uses ATTINY 0/1/2-Series 14pin SOIC
 * Firmware found here: https://github.com/tetrabiodistributed/papra-pcb-firmware/tree/main/papracode
 
-Notes for programming:
+## Notes for programming
+
 * Make a UPDI Programmer: https://create.arduino.cc/projecthub/john-bradnam/create-your-own-updi-programmer-1e55f1?ref=user&ref_id=466812&offset=6
 * The board features a UPDI header on the top left of the PCB (top being the side with the battery connectors) the pins are top to bottom 5V, GND and data. 
 * Setup Arduino: https://www.hackster.io/john-bradnam/using-the-new-attiny-processors-with-arduino-ide-612185
@@ -47,4 +52,3 @@ Please note that there are a number of ATTiny SKUs that are compatible with this
 | ATtiny1624SSU, | Yes         |    	                           |
 
 (1)ATtiny 204 and 214 have limited (2K) flash memory for program space, but the firmware can be made to fit by sacraficing the bootup LED sequence.
-
