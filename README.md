@@ -1,8 +1,32 @@
 # PAPRA Printed Circuit Board Assembly (PCBA)
 
+PAPRa PCBA - printed circuit board assembly for the PAPRa M12 Controller
+
 Full documentation page for building the PAPRa can be found here: https://tetrabiodistributed.github.io/papra/
 
 Firmware for flashing the PAPRA PCBA can be found here: https://github.com/tetrabiodistributed/papra-pcb-firmware/tree/main/papracode
+
+## PAPRa PCBA comes in 2 form factors
+
+### Thru Hole Technology
+
+* Part Number A-TET-001113
+* Suitable for hand soldering
+* Larger form factor
+* Easy to assemble, intended for novice 
+* BOM parts should be easy to source
+* Uses Adafruit QT PY or Seeed Xiao microcontroller board
+* Firmware: TBD
+
+### SMT
+
+* Part Number A-TET-001100
+* Suitable for mass production
+* Smallest form factor
+* Machine assembly recommended, very difficult to hand solder
+* Lowest BOM cost
+* Uses ATTINY 0/1/2-Series 14pin SOIC
+* Firmware found here: https://github.com/tetrabiodistributed/papra-pcb-firmware/tree/main/papracode
 
 ## Notes for programming
 

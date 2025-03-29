@@ -1,0 +1,15 @@
+{
+    "name": "papra-pcba",
+    "version": "1.0",
+    "description": "PAPRA PCB Assembly",
+    "keywords": [
+        "powered-air-purifying-respirator",
+        "milwaukee-battery",
+        "bnc-connector"
+    ],
+    "repository": "https://github.com/tetrabiodistributed/PAPRA-PCB",
+    "author": "Patrick Campbell <patrick.campbell@tetra.org>",
+    "license": "CERN-OHL-P-2.0",
+    "dependencies": {
+    }
+}

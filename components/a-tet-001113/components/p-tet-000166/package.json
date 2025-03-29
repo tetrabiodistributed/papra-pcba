@@ -1,0 +1,11 @@
+{
+    "name": "p-tet-000166",
+    "version": "1.0",
+    "description": "PAPRA M12 Controller PCB Through Hole",
+    "keywords": [],
+    "repository": "https://github.com/tetrabiodistributed/PAPRA-PCB",
+    "author": "Patrick Campbell <patrick.campbell@tetra.org>",
+    "license": "CERN-OHL-P-2.0",
+    "dependencies": {
+    }
+}
