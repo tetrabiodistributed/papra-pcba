@@ -1,3 +1,6 @@
 [submodule "papra-pcb-firmware"]
 	path = papra-pcb-firmware
 	url = https://github.com/tetrabiodistributed/papra-pcb-firmware
+[submodule "external/kistack"]
+	path = external/kistack
+	url = https://github.com/American-Embedded/kistack.git

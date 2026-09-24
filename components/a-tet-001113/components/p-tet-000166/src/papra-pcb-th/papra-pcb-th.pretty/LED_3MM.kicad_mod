@@ -1,0 +1,249 @@
+(footprint "LED_3MM"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "LED 3MM PTH  3 mm, round.\n\nSpecifications:\n\n• Pin count: 2\n• Pin pitch: 0.1inch\n• Diameter: 3mm\n\nExample device(s):\n\n• LED")
+	(property "Reference" "REF**"
+		(at 0 -2.286 180)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "e4e9510f-4226-5ac4-a3b1-853cbf93b978")
+		(effects
+			(font
+				(size 1.206602 1.206602)
+				(thickness 0.063398)
+			)
+			(justify top)
+		)
+	)
+	(property "Value" "LED_3MM"
+		(at -2.731 -0.063 270)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "ccd67ec0-3d67-5c03-a91c-9fe0218929f4")
+		(effects
+			(font
+				(size 0.749402 0.749402)
+				(thickness 0.063398)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "41cd206e-a026-590e-ae18-7e3bc981886d")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4c43f5c5-a665-5289-adaa-4c7f1304cb26")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start 1.5748 -1.2954)
+		(end 1.5748 -0.7874)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "69eadcce-2d84-5cd0-81bf-4dd613d46209")
+	)
+	(fp_line
+		(start 1.5748 1.2954)
+		(end 1.5748 0.8382)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "335fd669-2935-5a38-a4e9-8188b2241f40")
+	)
+	(fp_arc
+		(start -1.7929 -0.9562)
+		(mid -1.045438 -1.7424)
+		(end 0 -2.032)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "e285d326-aa29-5c4d-aa6f-6bf38ecb7c11")
+	)
+	(fp_arc
+		(start 0 -2.032)
+		(mid 0.861864 -1.840173)
+		(end 1.561 -1.3009)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "86a41076-f89b-568c-8c98-3b5232aaa78f")
+	)
+	(fp_arc
+		(start 0 2.032)
+		(mid -1.019924 1.757525)
+		(end -1.7643 1.0082)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b34fbb3e-e673-57e5-af5c-78e02982b1e3")
+	)
+	(fp_arc
+		(start 1.5512 1.3126)
+		(mid 0.854953 1.843405)
+		(end 0 2.032)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "520f3d6a-f307-5d82-ba9c-92f63d5c6d49")
+	)
+	(fp_line
+		(start 1.5748 -1.2954)
+		(end 1.5748 -0.7874)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "B.SilkS")
+		(uuid "4107faa1-e7d9-53dd-a577-6861ed181028")
+	)
+	(fp_line
+		(start 1.5748 1.2954)
+		(end 1.5748 0.8382)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "B.SilkS")
+		(uuid "eba83be6-bfb3-5871-9730-65fe785d050f")
+	)
+	(fp_arc
+		(start -1.7929 -0.9562)
+		(mid -1.045438 -1.7424)
+		(end 0 -2.032)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "B.SilkS")
+		(uuid "c351de20-27e0-5d37-aa7b-33e08f3cf13c")
+	)
+	(fp_arc
+		(start 0 -2.032)
+		(mid 0.861864 -1.840173)
+		(end 1.561 -1.3009)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "B.SilkS")
+		(uuid "cf1b025c-4f3f-563e-9d46-1311753115a0")
+	)
+	(fp_arc
+		(start 0 2.032)
+		(mid -1.019924 1.757525)
+		(end -1.7643 1.0082)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "B.SilkS")
+		(uuid "105022ae-f193-5e84-be1f-7b5a03a5fb07")
+	)
+	(fp_arc
+		(start 1.5512 1.3126)
+		(mid 0.854953 1.843405)
+		(end 0 2.032)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "B.SilkS")
+		(uuid "ab543d64-a261-5921-8e66-799404d92a1f")
+	)
+	(fp_line
+		(start 1.5748 1.27)
+		(end 1.5748 -1.27)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f5c3cd05-d064-5205-8fae-de0b4872caea")
+	)
+	(fp_arc
+		(start -2.032 0)
+		(mid -1.970339 -0.496775)
+		(end -1.7891 -0.9634)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "d9e481d1-85e9-5cb4-a19f-59b249a17dca")
+	)
+	(fp_arc
+		(start -1.7306 1.065)
+		(mid -1.95521 0.553417)
+		(end -2.032 0)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "e8d8bdd8-6944-5ba5-a4c9-cc0a91d63118")
+	)
+	(pad "A" thru_hole circle
+		(at -1.27 0)
+		(size 1.8796 1.8796)
+		(drill 0.8128)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "7def074e-e580-57f1-b934-679c6e202467")
+	)
+	(pad "K" thru_hole circle
+		(at 1.27 0)
+		(size 1.8796 1.8796)
+		(drill 0.8128)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "4956a4fa-b1a9-599a-873a-28d0b9688fed")
+	)
+	(embedded_fonts no)
+	(model "${KICAD10_3DMODEL_DIR}/LED_THT.3dshapes/LED_D3.0mm.step"
+		(offset
+			(xyz 1.27 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 180)
+		)
+	)
+)

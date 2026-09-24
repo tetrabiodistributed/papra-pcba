@@ -1,0 +1,26 @@
+# Same checks as `make check`, on every push/PR. KiCad comes from its official container at
+# the version pinned in scripts/versions.env; uv/Python/deps come from `make deps`.
+name: check
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    container:
+      image: kicad/kicad:10.0.6   # keep in sync with KICAD_IMAGE in scripts/versions.env
+      options: --user root
+    steps:
+      - uses: actions/checkout@v4
+        with: { submodules: true }
+      - name: Bootstrap toolchain (uv, Python, deps)
+        run: make deps
+      - name: Validate (structure, ERC, DRC parity, Gerber diff)
+        run: make check KICAD_CLI=kicad-cli
+      - name: Fabrication outputs
+        run: make outputs KICAD_CLI=kicad-cli
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: p-tet-000166-outputs
+          path: |
+            build/p-tet-000166/outputs
+            build/p-tet-000166/render

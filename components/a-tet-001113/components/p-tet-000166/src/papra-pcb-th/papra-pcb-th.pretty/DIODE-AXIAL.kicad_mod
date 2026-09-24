@@ -1,0 +1,159 @@
+(footprint "DIODE-AXIAL"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Axial Diode, 10.16 mm pitch, 5.00 mm body length, 2.50 mm body diameter\n\nAxial Diode package with 10.16 mm pitch (lead spacing), 0.63 mm lead diameter, 5.00 mm body length and 2.50 mm body diameter")
+	(property "Reference" "REF**"
+		(at 3.937 0.869 180)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "714be1d4-4cd8-5482-acac-7c1608ca85a1")
+		(effects
+			(font
+				(size 1.118108 1.118108)
+				(thickness 0.151892)
+			)
+			(justify bottom)
+		)
+	)
+	(property "Value" "DIODE-AXIAL"
+		(at -0.127 -0.147 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "014da64f-7f2e-5b76-a171-ead18b1a7001")
+		(effects
+			(font
+				(size 0.660908 0.660908)
+				(thickness 0.151892)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d80647fd-6db7-5984-bae3-794b39d203c7")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6dc1d110-53aa-5c6b-8fbf-2159a81d0e1e")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -2.4892 0)
+		(end -4.111 0)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a2b6e39d-1fd0-5e99-a736-3a33a63d6e58")
+	)
+	(fp_line
+		(start 1.71 -1.2446)
+		(end 1.71 1.2446)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8bf64939-5a0b-54f3-b435-cb8078b3fc73")
+	)
+	(fp_line
+		(start 4.25 0)
+		(end 2.4892 0)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "dc1387f3-7f45-5914-83e2-7461a122f587")
+	)
+	(fp_line
+		(start -2.4892 -1.2446)
+		(end 2.4892 -1.2446)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "a82878fd-e86e-5682-ab6d-2246d91e0df4")
+	)
+	(fp_line
+		(start -2.4892 1.2446)
+		(end -2.4892 -1.2446)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "e2fd3b47-6211-534f-9f29-ed5a28f47f2d")
+	)
+	(fp_line
+		(start 2.4892 -1.2446)
+		(end 2.4892 1.2446)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "b74d710a-19d1-5c97-b5fa-4fca0255e6bd")
+	)
+	(fp_line
+		(start 2.4892 1.2446)
+		(end -2.4892 1.2446)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "b1c67585-0f68-5494-bd54-efcfa0290c31")
+	)
+	(pad "1" thru_hole circle
+		(at -5.08 0)
+		(size 1.508 1.508)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "93ba1dca-0cce-5c0d-a73e-863fe92d1518")
+	)
+	(pad "2" thru_hole circle
+		(at 5.08 0)
+		(size 1.508 1.508)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "a9ce0247-f8fb-5845-9c60-3a325227a805")
+	)
+	(embedded_fonts no)
+	(model "${KICAD10_3DMODEL_DIR}/Diode_THT.3dshapes/D_DO-41_SOD81_P10.16mm_Horizontal.step"
+		(offset
+			(xyz 5.08 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 180)
+		)
+	)
+)
