@@ -1,0 +1,35 @@
+Designator,MPN,LCSC,Note
+BATT+,63952-1,C6080352,"TE Connectivity; expand part, stock 30"
+BATT-,63952-1,C6080352,"TE Connectivity; expand part, stock 30"
+C1,FG14X7R1H334KNT06,C1623412,"TDK; expand part, stock 0"
+C2,ESH227M016AE3AA,C1579564,"KEMET; expand part, stock 80"
+C3,FG14X7R2A104KNT06,C5641356,"TDK; expand part, stock 0"
+D1,WP710A10SURCK,,no exact match (0 hits)
+D2,1N5240BTR,C895259,"onsemi; expand part, stock 0"
+D3,WP710A10SURCK,,no exact match (0 hits)
+D4,WP710A10SURCK,,no exact match (0 hits)
+D5,WP710A10SURCK,,no exact match (0 hits)
+D6,1N4004B-G,C17581497,"Comchip; expand part, stock 0"
+D7,WP710A10SURCK,,no exact match (0 hits)
+F1,696108003002,C5881326,"Wurth Elektronik; expand part, stock 0"
+H1,PJ-066A,C3096006,"CUI; expand part, stock 33"
+H2,5227161-9,C6693166,"TE Connectivity; expand part, stock 0"
+POT1,P091S-FC20BR10K,C5457205,"TT Electronics; expand part, stock 0"
+Q1,G75P04FI,,no exact match (0 hits)
+Q2,IPP040N06NF2SAKMA1,C7289519,"Infineon Technologies; expand part, stock 0"
+Q3,IPP040N06NF2SAKMA1,C7289519,"Infineon Technologies; expand part, stock 0"
+R1,MFR-25FRF52-100K,C1740093,"YAGEO; expand part, stock 1449"
+R10,MFR-25FRF52-680R,C1743595,"YAGEO; expand part, stock 0"
+R11,MFR-25FRF52-10K,C2649453,"YAGEO; expand part, stock 15358"
+R12,MFR-25FRF52-220R,C1743839,"YAGEO; expand part, stock 0"
+R2,MFR-25FRF52-100R,C1740087,"YAGEO; expand part, stock 5220"
+R3,MFR-25FRF52-100K,C1740093,"YAGEO; expand part, stock 1449"
+R4,MFR-25FRF52-330K,C1743849,"YAGEO; expand part, stock 0"
+R5,MFR-25FRF52-10K,C2649453,"YAGEO; expand part, stock 15358"
+R6,MFR-25FRF52-220R,C1743839,"YAGEO; expand part, stock 0"
+R7,MFR-25FRF52-100R,C1740087,"YAGEO; expand part, stock 5220"
+R8,MFR-25FRF52-100R,C1740087,"YAGEO; expand part, stock 5220"
+R9,MFR-25FRF52-100R,C1740087,"YAGEO; expand part, stock 5220"
+REG,UA78L05ACLPME3,C7372174,"Texas Instruments; expand part, stock 0"
+SG1,CMI-1210-92T,C3811998,"CUI; expand part, stock 0"
+U2,5325,C19128392,"Adafruit Industries; expand part, stock 0"

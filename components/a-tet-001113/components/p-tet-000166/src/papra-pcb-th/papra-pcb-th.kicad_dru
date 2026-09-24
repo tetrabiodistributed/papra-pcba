@@ -1,0 +1,10 @@
+(version 1)
+
+# Eagle checks copper against the Dimension layer (board outline) only. The DC jack's
+# blade slots were drawn on Eagle's Milling layer, which KiCad has to represent as
+# Edge.Cuts inside the footprint; copper deliberately touches those slot edges.
+(rule "eagle_copper_to_dimension"
+    (constraint edge_clearance (min 0.2mm)))
+(rule "milled_slots_inside_footprints"
+    (condition "B.memberOfFootprint('H1')")
+    (constraint edge_clearance (min 0mm)))

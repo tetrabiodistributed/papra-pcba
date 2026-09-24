@@ -1,2 +1,16 @@
 .DS_Store
 *~
+# project-local toolchain (see `make setup`)
+/tools/
+/.venv/
+/build/
+__pycache__/
+.pytest_cache/
+
+# KiCad per-user / transient files
+*.kicad_prl
+*-backups/
+fp-info-cache
+_autosave-*
+*.lck
+.history/

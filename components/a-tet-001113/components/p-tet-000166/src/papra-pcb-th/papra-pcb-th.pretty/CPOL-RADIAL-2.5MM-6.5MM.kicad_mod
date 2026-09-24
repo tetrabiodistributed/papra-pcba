@@ -1,0 +1,130 @@
+(footprint "CPOL-RADIAL-2.5MM-6.5MM"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "2.5 mm spaced PTHs with 6.5 mm diameter outline")
+	(property "Reference" "REF**"
+		(at 0 -3.429 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "8e40274d-1248-5bc3-8053-3d2128956c8d")
+		(effects
+			(font
+				(size 1.206602 1.206602)
+				(thickness 0.063398)
+			)
+			(justify bottom)
+		)
+	)
+	(property "Value" "CPOL-RADIAL-2.5MM-6.5MM"
+		(at 0.254 1.651 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "3dcefb40-573d-5610-bf7d-0deb424d68c7")
+		(effects
+			(font
+				(size 0.749402 0.749402)
+				(thickness 0.063398)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "61cfaaa5-40f7-5b31-897d-e7dbd5f003ed")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3078bfd1-109a-5e80-9f39-5ee2f54479e0")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -0.635 -1.778)
+		(end -1.905 -1.778)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "07799b76-ee3a-52c0-9036-38008bb04a07")
+	)
+	(fp_line
+		(start 1.27 -2.413)
+		(end 1.27 -1.143)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "9069960d-7949-50dd-8812-e4541319d1fb")
+	)
+	(fp_line
+		(start 1.905 -1.778)
+		(end 0.635 -1.778)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "21b757f2-e9b4-55cd-a05f-ba7b101d3078")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 3.25 0)
+		(stroke
+			(width 0.2032)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "bdd3a4b8-eb61-515a-b95d-0e4a0688f4d9")
+	)
+	(pad "1" thru_hole rect
+		(at 1.25 0)
+		(size 1.651 1.651)
+		(drill 0.7)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "2fa3f62b-2fc6-5bb3-ba4c-b41c8e81cafc")
+	)
+	(pad "2" thru_hole circle
+		(at -1.25 0)
+		(size 1.651 1.651)
+		(drill 0.7)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.1016)
+		(thermal_bridge_angle 0)
+		(uuid "1c54d023-a4f7-515f-96f0-f9648cb24044")
+	)
+	(embedded_fonts no)
+	(model "${KICAD10_3DMODEL_DIR}/Capacitor_THT.3dshapes/CP_Radial_D6.3mm_P2.50mm.step"
+		(offset
+			(xyz 1.25 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 180)
+		)
+	)
+)
